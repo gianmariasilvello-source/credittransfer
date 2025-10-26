@@ -69,6 +69,29 @@ python3 experiments/run_mes_experiment.py
 head -50 output/mes_experiment/mes_author_hindices.txt
 ```
 
+## 6. Synthetic Graphs (2 minutes)
+
+```bash
+# Generate graph and compare rankings (includes Direct Citations baseline)
+python3 experiments/run_ranking_comparison.py config/synthetic_small.properties
+
+# View side-by-side top-20 rankings
+# See Kendall's tau correlation matrix  
+# Analyze ranking volatility
+```
+
+**What you get:**
+- Top-20 rankings for 6 retention strategies (including baseline)
+- Kendall's tau correlation matrix
+- Ranking volatility analysis
+- h-index from both kudos and total credit
+
+**Complete guide:** See [SYNTHETIC_GRAPHS_GUIDE.md](SYNTHETIC_GRAPHS_GUIDE.md)
+- All parameter explanations
+- Controlled experiment setup
+- Output interpretation
+- Advanced examples
+
 ## Common Tasks
 
 **Set retention rates by node type:**

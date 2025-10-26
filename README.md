@@ -213,6 +213,32 @@ CreditTransferProject/
 
 See `dataprocessing/MES_SEMANTICS_REFERENCE.md` for complete details.
 
+## Synthetic Graph Generation
+
+Generate realistic citation networks with configurable properties for controlled experiments.
+
+### Quick Start
+```bash
+# Generate and compare rankings (includes Direct Citations baseline)
+python3 experiments/run_ranking_comparison.py config/synthetic_small.properties
+```
+
+### Features
+- **DAG structure** - Papers cite only earlier papers
+- **Power-law in-degree** - Few highly-cited papers
+- **Community structure** - Research subfields
+- **Transitivity** - Triangle formation
+- **Authors with h-index** - Power-law productivity
+- **6 retention strategies** - Including Direct Citations baseline (no transitivity)
+
+### Complete Guide
+See **[SYNTHETIC_GRAPHS_GUIDE.md](SYNTHETIC_GRAPHS_GUIDE.md)** for:
+- Complete parameter explanations
+- Retention strategy details
+- Ranking comparison setup
+- Output interpretation
+- Advanced examples
+
 ## Testing
 
 ```bash

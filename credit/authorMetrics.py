@@ -168,6 +168,87 @@ class AuthorMetrics:
 
         return h_indices
 
+    def compute_h_index_from_total_credit(self, total_credit: np.ndarray) -> Dict[int, int]:
+        """
+        Compute h-index for all authors using TOTAL CREDIT instead of kudos.
+
+        This measures an author's influence including all transitive credit,
+        not just retained credit (kudos).
+
+        Args:
+            total_credit: Total credit vector from credit distribution
+
+        Returns:
+            Dictionary mapping author_id -> h_index_from_total_credit
+        """
+        h_indices = {}
+
+        for author_id in self.author_ids:
+            # Get total credit for this author's works (instead of kudos)
+            node_ids = self.author_to_nodes.get(author_id, np.array([], dtype=np.int32))
+            if len(node_ids) == 0:
+                h_indices[author_id] = 0
+            else:
+                credit_vals = total_credit[node_ids]
+                h_indices[author_id] = self.compute_h_index(credit_vals)
+
+        return h_indices
+
+    def get_author_direct_citations(self, author_id: int, graph) -> int:
+        """
+        Count total direct citations (in-degree) for all of an author's works.
+
+        Args:
+            author_id: Integer author ID
+            graph: Graph object
+
+        Returns:
+            Total number of direct citations across all author's publications
+        """
+        node_ids = self.author_to_nodes.get(author_id, np.array([], dtype=np.int32))
+        if len(node_ids) == 0:
+            return 0
+
+        # Fast path: precompute indegree per node in one pass
+        indegree = defaultdict(int)
+        adjacency = getattr(graph, 'adjacency', {})
+        for src, nbrs in adjacency.items():
+            for tgt in nbrs:
+                indegree[tgt] += 1
+
+        total_citations = 0
+        for node_id in node_ids:
+            total_citations += indegree.get(node_id, 0)
+
+        return total_citations
+
+    def compute_all_direct_citations(self, graph) -> Dict[int, int]:
+        """
+        Compute total direct citations for all authors.
+
+        Args:
+            graph: Graph object
+
+        Returns:
+            Dictionary mapping author_id -> total_direct_citations
+        """
+        # Precompute indegree for all nodes in a single pass over edges
+        indegree = defaultdict(int)
+        adjacency = getattr(graph, 'adjacency', {})
+        for src, nbrs in adjacency.items():
+            for tgt in nbrs:
+                indegree[tgt] += 1
+
+        citations = {}
+        for author_id in self.author_ids:
+            node_ids = self.author_to_nodes.get(author_id, np.array([], dtype=np.int32))
+            total = 0
+            for node_id in node_ids:
+                total += indegree.get(node_id, 0)
+            citations[author_id] = total
+
+        return citations
+
     def compute_author_statistics(self, kudos: np.ndarray) -> Dict[int, Dict[str, float]]:
         """
         Compute comprehensive statistics for each author.
@@ -275,6 +356,8 @@ class AuthorMetrics:
 
     def display_author_report(self,
                             kudos: np.ndarray,
+                            total_credit: Optional[np.ndarray] = None,
+                            graph = None,
                             top_k: int = 10,
                             show_details: bool = True):
         """
@@ -282,6 +365,8 @@ class AuthorMetrics:
 
         Args:
             kudos: Kudos vector from credit distribution
+            total_credit: Optional total credit vector for h-index from total credit
+            graph: Optional graph for computing direct citations
             top_k: Number of top authors to display
             show_details: If True, show detailed statistics
         """
@@ -291,34 +376,120 @@ class AuthorMetrics:
         print(f"Total authors: {self.n_authors}")
         print(f"Total publications: {len(self.node_to_authors)}")
 
-        # Top authors by h-index
+        # Compute all metrics
+        h_indices_kudos = self.compute_all_h_indices(kudos)
+        h_indices_credit = None
+        direct_citations = None
+
+        if total_credit is not None:
+            h_indices_credit = self.compute_h_index_from_total_credit(total_credit)
+
+        if graph is not None:
+            direct_citations = self.compute_all_direct_citations(graph)
+
+        # Top authors by h-index (from kudos)
         print(f"\n{'='*80}")
-        print(f"Top {top_k} Authors by h-index")
+        print(f"Top {top_k} Authors by h-index (from KUDOS)")
         print(f"{'='*80}")
-        print(f"{'Rank':<6} {'Author ID':<12} {'h-index':<10} {'Pubs':<8} {'Total Kudos':<15} {'Name'}")
+
+        header = f"{'Rank':<6} {'Author ID':<12} {'h-kudos':<10} {'Pubs':<8} {'Total Kudos':<15}"
+        if h_indices_credit:
+            header += f" {'h-credit':<10}"
+        if direct_citations:
+            header += f" {'Citations':<12}"
+        header += " Name"
+        print(header)
         print(f"{'-'*80}")
 
-        top_by_h = self.get_top_authors_by_h_index(kudos, top_k)
-        for rank, (author_id, h_idx, name) in enumerate(top_by_h, 1):
+        # Sort by h-index from kudos
+        sorted_authors = sorted(
+            h_indices_kudos.items(),
+            key=lambda x: (x[1], x[0]),
+            reverse=True
+        )[:top_k]
+
+        for rank, (author_id, h_idx_kudos) in enumerate(sorted_authors, 1):
             kudos_vals = self.get_author_kudos(author_id, kudos)
             n_pubs = len(kudos_vals)
             total_kudos = np.sum(kudos_vals)
-            print(f"{rank:<6} {author_id:<12} {h_idx:<10} {n_pubs:<8} {total_kudos:<15.2f} {name}")
+            name = self.get_author_name(author_id)
+
+            line = f"{rank:<6} {author_id:<12} {h_idx_kudos:<10} {n_pubs:<8} {total_kudos:<15.2f}"
+
+            if h_indices_credit:
+                h_idx_credit = h_indices_credit[author_id]
+                line += f" {h_idx_credit:<10}"
+
+            if direct_citations:
+                cites = direct_citations[author_id]
+                line += f" {cites:<12}"
+
+            line += f" {name}"
+            print(line)
+
+        # Top authors by h-index from total credit (if available)
+        if h_indices_credit:
+            print(f"\n{'='*80}")
+            print(f"Top {top_k} Authors by h-index (from TOTAL CREDIT)")
+            print(f"{'='*80}")
+
+            header = f"{'Rank':<6} {'Author ID':<12} {'h-credit':<10} {'h-kudos':<10} {'Pubs':<8} {'Total Credit':<15}"
+            if direct_citations:
+                header += f" {'Citations':<12}"
+            header += " Name"
+            print(header)
+            print(f"{'-'*80}")
+
+            # Sort by h-index from total credit
+            sorted_by_credit = sorted(
+                h_indices_credit.items(),
+                key=lambda x: (x[1], x[0]),
+                reverse=True
+            )[:top_k]
+
+            for rank, (author_id, h_idx_credit) in enumerate(sorted_by_credit, 1):
+                node_ids = self.author_to_nodes.get(author_id, np.array([], dtype=np.int32))
+                n_pubs = len(node_ids)
+                total_cred = np.sum(total_credit[node_ids]) if n_pubs > 0 else 0
+                h_idx_kudos = h_indices_kudos[author_id]
+                name = self.get_author_name(author_id)
+
+                line = f"{rank:<6} {author_id:<12} {h_idx_credit:<10} {h_idx_kudos:<10} {n_pubs:<8} {total_cred:<15.2f}"
+
+                if direct_citations:
+                    cites = direct_citations[author_id]
+                    line += f" {cites:<12}"
+
+                line += f" {name}"
+                print(line)
 
         if show_details:
             # Top authors by total kudos
             print(f"\n{'='*80}")
             print(f"Top {top_k} Authors by Total Kudos")
             print(f"{'='*80}")
-            print(f"{'Rank':<6} {'Author ID':<12} {'Total Kudos':<15} {'Pubs':<8} {'Avg Kudos':<12} {'Name'}")
+
+            header = f"{'Rank':<6} {'Author ID':<12} {'Total Kudos':<15} {'Pubs':<8} {'Avg Kudos':<12}"
+            if direct_citations:
+                header += f" {'Citations':<12}"
+            header += " Name"
+            print(header)
             print(f"{'-'*80}")
 
             top_by_kudos = self.get_top_authors_by_total_kudos(kudos, top_k)
-            for rank, (author_id, total_kudos, name) in enumerate(top_by_kudos, 1):
+            for rank, (author_id, total_kudos_val, name) in enumerate(top_by_kudos, 1):
                 kudos_vals = self.get_author_kudos(author_id, kudos)
                 n_pubs = len(kudos_vals)
-                avg_kudos = total_kudos / n_pubs if n_pubs > 0 else 0
-                print(f"{rank:<6} {author_id:<12} {total_kudos:<15.2f} {n_pubs:<8} {avg_kudos:<12.2f} {name}")
+                avg_kudos = total_kudos_val / n_pubs if n_pubs > 0 else 0
+
+                line = f"{rank:<6} {author_id:<12} {total_kudos_val:<15.2f} {n_pubs:<8} {avg_kudos:<12.2f}"
+
+                if direct_citations:
+                    cites = direct_citations[author_id]
+                    line += f" {cites:<12}"
+
+                line += f" {name}"
+                print(line)
 
 
 def create_random_authorship(n_nodes: int,
@@ -350,4 +521,3 @@ def create_random_authorship(n_nodes: int,
         node_to_authors[node_id] = list(authors)
 
     return node_to_authors
-

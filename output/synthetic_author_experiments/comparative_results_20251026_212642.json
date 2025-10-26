@@ -1,0 +1,1970 @@
+{
+  "timestamp": "2025-10-26T21:26:42.363798",
+  "experiments": [
+    {
+      "experiment_name": "High Retention (0.8, 0.9, 0.9)",
+      "retention_rates": [
+        0.8,
+        0.9,
+        0.9
+      ],
+      "graph_properties": {
+        "n_nodes": 100,
+        "n_edges": 643,
+        "n_authors": 50,
+        "transitivity": 0.031382527565733676,
+        "avg_authors_per_node": 1.93
+      },
+      "credit_stats": {
+        "total_kudos": 643.0,
+        "total_credit": 783.8783685322949,
+        "conservation_error": 0.0
+      },
+      "author_stats": {
+        "authors_with_h_kudos_gt_0": 50,
+        "authors_with_h_credit_gt_0": 50,
+        "max_h_kudos": 4,
+        "max_h_credit": 4,
+        "avg_h_kudos": 2.58,
+        "avg_h_credit": 2.74,
+        "max_citations": 47
+      },
+      "top_authors_kudos": [
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_kudos": 32.69290842178049
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 36,
+          "total_kudos": 32.649567740513376
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 47,
+          "total_kudos": 50.663337738539056
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_kudos": 42.43863727411943
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_kudos": 29.621892280676505
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_kudos": 38.832108695607666
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 25,
+          "total_kudos": 23.662193987014206
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 19,
+          "total_kudos": 17.04293406133976
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_kudos": 40.501511316368195
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 25,
+          "total_kudos": 23.63958577501056
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 24,
+          "total_kudos": 21.57323642093381
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 20,
+          "total_kudos": 17.930854409733527
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 24,
+          "total_kudos": 22.543995736126654
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 33,
+          "total_kudos": 32.66166158648475
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 30,
+          "total_kudos": 43.974749668576536
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 24,
+          "total_kudos": 21.86331210080977
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_kudos": 22.787487400717712
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 25.797479316037485
+        },
+        {
+          "author_id": 19,
+          "name": "Author_0019",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 36,
+          "total_kudos": 33.24764835697305
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 37,
+          "total_kudos": 33.46991577862474
+        }
+      ],
+      "top_authors_credit": [
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_credit": 39.90350653297187
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 24,
+          "total_credit": 26.427730080611862
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 6,
+          "citations": 36,
+          "total_credit": 39.84933068138797
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 37,
+          "total_credit": 41.83739472328093
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 5,
+          "citations": 47,
+          "total_credit": 63.058821073739566
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_credit": 53.04829659264929
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_credit": 36.33789268136467
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_credit": 47.85066320002863
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 25,
+          "total_credit": 29.577742483767757
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 19,
+          "total_credit": 21.3036675766747
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_credit": 50.62688914546024
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 34.467306859950796
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 25,
+          "total_credit": 29.549482218763202
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 20,
+          "total_credit": 21.72409534268595
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 24,
+          "total_credit": 27.7802268078992
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 33,
+          "total_credit": 40.827076983105925
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 46.285863313404235
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 24,
+          "total_credit": 27.32914012601221
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_credit": 27.806858758745022
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 32.24684914504686
+        }
+      ]
+    },
+    {
+      "experiment_name": "Medium Retention (0.5, 0.7, 0.7)",
+      "retention_rates": [
+        0.5,
+        0.7,
+        0.7
+      ],
+      "graph_properties": {
+        "n_nodes": 100,
+        "n_edges": 643,
+        "n_authors": 50,
+        "transitivity": 0.031382527565733676,
+        "avg_authors_per_node": 1.93
+      },
+      "credit_stats": {
+        "total_kudos": 643.0,
+        "total_credit": 1146.615770448587,
+        "conservation_error": 0.0
+      },
+      "author_stats": {
+        "authors_with_h_kudos_gt_0": 50,
+        "authors_with_h_credit_gt_0": 50,
+        "max_h_kudos": 4,
+        "max_h_credit": 4,
+        "avg_h_kudos": 2.18,
+        "avg_h_credit": 2.78,
+        "max_citations": 47
+      },
+      "top_authors_kudos": [
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_kudos": 36.41785777132934
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_kudos": 26.749288762754727
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_kudos": 27.002684757548835
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_kudos": 53.200703676423544
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 20,
+          "total_kudos": 13.644687624069604
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_kudos": 18.18398075969848
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 36,
+          "total_kudos": 25.689698394428678
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 20.8156584059824
+        },
+        {
+          "author_id": 19,
+          "name": "Author_0019",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 36,
+          "total_kudos": 26.35075452510436
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 37,
+          "total_kudos": 26.193212452222486
+        },
+        {
+          "author_id": 16,
+          "name": "Author_0016",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 24.331444251094645
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 47,
+          "total_kudos": 53.277825418540424
+        },
+        {
+          "author_id": 4,
+          "name": "Author_0004",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 20,
+          "total_kudos": 16.41357071372832
+        },
+        {
+          "author_id": 48,
+          "name": "Author_0048",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 3,
+          "citations": 22,
+          "total_kudos": 19.149238670499905
+        },
+        {
+          "author_id": 47,
+          "name": "Author_0047",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 30,
+          "total_kudos": 27.006379266864535
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_kudos": 44.01834161478804
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 25,
+          "total_kudos": 19.81246528118377
+        },
+        {
+          "author_id": 42,
+          "name": "Author_0042",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 2,
+          "citations": 21,
+          "total_kudos": 21.56407566443355
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 19,
+          "total_kudos": 13.199037439277273
+        },
+        {
+          "author_id": 39,
+          "name": "Author_0039",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 5,
+          "citations": 14,
+          "total_kudos": 8.195195116795023
+        }
+      ],
+      "top_authors_credit": [
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 35,
+          "total_credit": 50.37971051131028
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 24,
+          "total_credit": 31.317690448934492
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 20,
+          "total_credit": 24.718229007707393
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 33,
+          "total_credit": 59.507431229451264
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 6,
+          "citations": 36,
+          "total_credit": 47.75373778506997
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 37,
+          "total_credit": 52.38642490444497
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 47,
+          "total_credit": 105.5781656970554
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_credit": 72.83571554265868
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_credit": 50.92743128507763
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 34,
+          "total_credit": 85.46553698914427
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 25,
+          "total_credit": 39.62493056236754
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 19,
+          "total_credit": 26.398074878554546
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_credit": 106.40140735284709
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 49.38855839413668
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 25,
+          "total_credit": 39.651574647456385
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 24,
+          "total_credit": 35.64182627190819
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 105.53030997806765
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 24,
+          "total_credit": 34.52229428850664
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_credit": 33.88215086362222
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 41.6313168119648
+        }
+      ]
+    },
+    {
+      "experiment_name": "Low Retention (0.2, 0.5, 0.5)",
+      "retention_rates": [
+        0.2,
+        0.5,
+        0.5
+      ],
+      "graph_properties": {
+        "n_nodes": 100,
+        "n_edges": 643,
+        "n_authors": 50,
+        "transitivity": 0.031382527565733676,
+        "avg_authors_per_node": 1.93
+      },
+      "credit_stats": {
+        "total_kudos": 643.0,
+        "total_credit": 1902.095303186809,
+        "conservation_error": 0.0
+      },
+      "author_stats": {
+        "authors_with_h_kudos_gt_0": 50,
+        "authors_with_h_credit_gt_0": 50,
+        "max_h_kudos": 3,
+        "max_h_credit": 5,
+        "avg_h_kudos": 1.66,
+        "avg_h_credit": 2.82,
+        "max_citations": 47
+      },
+      "top_authors_kudos": [
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_kudos": 17.557597925683194
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_kudos": 21.013622599502472
+        },
+        {
+          "author_id": 47,
+          "name": "Author_0047",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 30,
+          "total_kudos": 17.498052033033673
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_kudos": 2,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_kudos": 16.753669749991058
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_kudos": 35.78998691210899
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 25,
+          "total_kudos": 11.110009186392853
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_kudos": 49.2165907796994
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 15.177064107565766
+        },
+        {
+          "author_id": 37,
+          "name": "Author_0037",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 29,
+          "total_kudos": 14.90285390849368
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 25,
+          "total_kudos": 11.329189594454988
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_kudos": 2,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 24,
+          "total_kudos": 9.309616371058672
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 24,
+          "total_kudos": 10.624733118592381
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_kudos": 2,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 33,
+          "total_kudos": 18.85772471595966
+        },
+        {
+          "author_id": 28,
+          "name": "Author_0028",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 3,
+          "citations": 29,
+          "total_kudos": 17.090030856034637
+        },
+        {
+          "author_id": 26,
+          "name": "Author_0026",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 16,
+          "total_kudos": 6.8165122637112
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_kudos": 10.830144206132934
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_kudos": 2,
+          "h_credit": 5,
+          "pubs": 6,
+          "citations": 36,
+          "total_kudos": 15.130774929217269
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 11.188475140033688
+        },
+        {
+          "author_id": 19,
+          "name": "Author_0019",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 36,
+          "total_kudos": 13.827196764543256
+        },
+        {
+          "author_id": 18,
+          "name": "Author_0018",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 2,
+          "citations": 16,
+          "total_kudos": 9.511732779839527
+        }
+      ],
+      "top_authors_credit": [
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_credit": 5,
+          "h_kudos": 2,
+          "pubs": 6,
+          "citations": 36,
+          "total_credit": 59.348781489795975
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 35,
+          "total_credit": 67.46325559366491
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 24,
+          "total_credit": 38.189626786480865
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 5,
+          "citations": 20,
+          "total_credit": 28.28262488809034
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 33,
+          "total_credit": 94.28862357979833
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 37,
+          "total_credit": 69.42567004266306
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 47,
+          "total_credit": 195.46689552340044
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 6,
+          "citations": 44,
+          "total_credit": 105.06811299751236
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_credit": 76.48516040927484
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 34,
+          "total_credit": 167.64710534140386
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 25,
+          "total_credit": 55.55004593196429
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 3,
+          "citations": 19,
+          "total_credit": 34.36172433222973
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 33,
+          "total_credit": 246.08295389849707
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 75.88532053782887
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 25,
+          "total_credit": 56.64594797227495
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 24,
+          "total_credit": 47.26461574727173
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 283.8930658540893
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 3,
+          "citations": 24,
+          "total_credit": 45.98159554418877
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 25,
+          "total_credit": 43.32160423011719
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 55.942375700168434
+        }
+      ]
+    },
+    {
+      "experiment_name": "Papers Only Retain (0.5, 1.0, 1.0)",
+      "retention_rates": [
+        0.5,
+        1.0,
+        1.0
+      ],
+      "graph_properties": {
+        "n_nodes": 100,
+        "n_edges": 643,
+        "n_authors": 50,
+        "transitivity": 0.031382527565733676,
+        "avg_authors_per_node": 1.93
+      },
+      "credit_stats": {
+        "total_kudos": 643.0000000000001,
+        "total_credit": 1096.4179896182432,
+        "conservation_error": 1.1368683772161603e-13
+      },
+      "author_stats": {
+        "authors_with_h_kudos_gt_0": 50,
+        "authors_with_h_credit_gt_0": 50,
+        "max_h_kudos": 4,
+        "max_h_credit": 4,
+        "avg_h_kudos": 2.2,
+        "avg_h_credit": 2.78,
+        "max_citations": 47
+      },
+      "top_authors_kudos": [
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_kudos": 4,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_kudos": 35.388820677071166
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_kudos": 28.0463152557911
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_kudos": 29.208080316089344
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_kudos": 49.095374552330796
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 20,
+          "total_kudos": 15.447290747233211
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 24,
+          "total_kudos": 18.82539824672414
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_kudos": 19.563352798607482
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 6,
+          "citations": 36,
+          "total_kudos": 27.6518869624734
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 18.566341961484877
+        },
+        {
+          "author_id": 19,
+          "name": "Author_0019",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 36,
+          "total_kudos": 25.809609118418873
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 37,
+          "total_kudos": 25.59029835893527
+        },
+        {
+          "author_id": 16,
+          "name": "Author_0016",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_kudos": 22.718459473664023
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_kudos": 3,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 47,
+          "total_kudos": 51.42899622342056
+        },
+        {
+          "author_id": 4,
+          "name": "Author_0004",
+          "h_kudos": 3,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 20,
+          "total_kudos": 16.010627929390875
+        },
+        {
+          "author_id": 48,
+          "name": "Author_0048",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 3,
+          "citations": 22,
+          "total_kudos": 18.853973440105705
+        },
+        {
+          "author_id": 47,
+          "name": "Author_0047",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 30,
+          "total_kudos": 24.18285089723795
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_kudos": 43.876432401687936
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 25,
+          "total_kudos": 19.38832037844593
+        },
+        {
+          "author_id": 42,
+          "name": "Author_0042",
+          "h_kudos": 2,
+          "h_credit": 2,
+          "pubs": 2,
+          "citations": 21,
+          "total_kudos": 18.731247461992073
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 19,
+          "total_kudos": 12.302237351533975
+        }
+      ],
+      "top_authors_credit": [
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 35,
+          "total_credit": 49.62254363034268
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 5,
+          "citations": 24,
+          "total_credit": 30.298075034565535
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 20,
+          "total_credit": 24.537552217500462
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_credit": 4,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 33,
+          "total_credit": 57.621938165129315
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 6,
+          "citations": 36,
+          "total_credit": 46.51015692311079
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 37,
+          "total_credit": 51.18059671787054
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_credit": 4,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 47,
+          "total_credit": 100.41762781106323
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_credit": 4,
+          "h_kudos": 4,
+          "pubs": 6,
+          "citations": 44,
+          "total_credit": 70.77764135414233
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_credit": 49.73560123461622
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 34,
+          "total_credit": 81.3958355264099
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 25,
+          "total_credit": 38.77664075689186
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 19,
+          "total_credit": 24.60447470306795
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 33,
+          "total_credit": 98.19074910466159
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 48.34364898637567
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 25,
+          "total_credit": 38.92352418146421
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 4,
+          "citations": 24,
+          "total_credit": 34.1286670215448
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 100.7999566187002
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_credit": 3,
+          "h_kudos": 2,
+          "pubs": 3,
+          "citations": 24,
+          "total_credit": 34.082901118663536
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_credit": 33.123553634946134
+        },
+        {
+          "author_id": 23,
+          "name": "Author_0023",
+          "h_credit": 3,
+          "h_kudos": 3,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 37.132683922969754
+        }
+      ]
+    },
+    {
+      "experiment_name": "Datasets Only Retain (0.0, 0.9, 0.0)",
+      "retention_rates": [
+        0.0,
+        0.9,
+        0.0
+      ],
+      "graph_properties": {
+        "n_nodes": 100,
+        "n_edges": 643,
+        "n_authors": 50,
+        "transitivity": 0.031382527565733676,
+        "avg_authors_per_node": 1.93
+      },
+      "credit_stats": {
+        "total_kudos": 643.0000000000001,
+        "total_credit": 2568.111759177153,
+        "conservation_error": 1.1368683772161603e-13
+      },
+      "author_stats": {
+        "authors_with_h_kudos_gt_0": 22,
+        "authors_with_h_credit_gt_0": 50,
+        "max_h_kudos": 2,
+        "max_h_credit": 5,
+        "avg_h_kudos": 1.0454545454545454,
+        "avg_h_credit": 2.88,
+        "max_citations": 47
+      },
+      "top_authors_kudos": [
+        {
+          "author_id": 2,
+          "name": "Author_0002",
+          "h_kudos": 2,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 20,
+          "total_kudos": 8.68246528756626
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 3,
+          "citations": 30,
+          "total_kudos": 7.426092583434023
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_kudos": 1,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 35,
+          "total_kudos": 10.416027735675726
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 34,
+          "total_kudos": 7.426092583434008
+        },
+        {
+          "author_id": 44,
+          "name": "Author_0044",
+          "h_kudos": 1,
+          "h_credit": 2,
+          "pubs": 3,
+          "citations": 20,
+          "total_kudos": 61.99091823769649
+        },
+        {
+          "author_id": 37,
+          "name": "Author_0037",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 29,
+          "total_kudos": 2.720879432397975
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_kudos": 1,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 24,
+          "total_kudos": 5.329610376851974
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_kudos": 1,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 20,
+          "total_kudos": 7.4260925834340075
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_kudos": 1,
+          "h_credit": 4,
+          "pubs": 4,
+          "citations": 24,
+          "total_kudos": 3.7402464441645407
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 30,
+          "total_kudos": 494.5618789477054
+        },
+        {
+          "author_id": 26,
+          "name": "Author_0026",
+          "h_kudos": 1,
+          "h_credit": 2,
+          "pubs": 4,
+          "citations": 16,
+          "total_kudos": 6.329610376851974
+        },
+        {
+          "author_id": 25,
+          "name": "Author_0025",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 25,
+          "total_kudos": 6.750592962015679
+        },
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_kudos": 1,
+          "h_credit": 5,
+          "pubs": 6,
+          "citations": 36,
+          "total_kudos": 10.416027735675726
+        },
+        {
+          "author_id": 18,
+          "name": "Author_0018",
+          "h_kudos": 1,
+          "h_credit": 2,
+          "pubs": 2,
+          "citations": 16,
+          "total_kudos": 7.97105155803041
+        },
+        {
+          "author_id": 15,
+          "name": "Author_0015",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 4,
+          "citations": 14,
+          "total_kudos": 5.329610376851974
+        },
+        {
+          "author_id": 14,
+          "name": "Author_0014",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 22,
+          "total_kudos": 18.708816973802055
+        },
+        {
+          "author_id": 13,
+          "name": "Author_0013",
+          "h_kudos": 1,
+          "h_credit": 2,
+          "pubs": 3,
+          "citations": 12,
+          "total_kudos": 7.4260925834340075
+        },
+        {
+          "author_id": 11,
+          "name": "Author_0011",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 5,
+          "citations": 26,
+          "total_kudos": 11.773190179773477
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_kudos": 1,
+          "h_credit": 4,
+          "pubs": 5,
+          "citations": 47,
+          "total_kudos": 2.7208794323979593
+        },
+        {
+          "author_id": 6,
+          "name": "Author_0006",
+          "h_kudos": 1,
+          "h_credit": 3,
+          "pubs": 6,
+          "citations": 29,
+          "total_kudos": 2.0400000000000156
+        }
+      ],
+      "top_authors_credit": [
+        {
+          "author_id": 24,
+          "name": "Author_0024",
+          "h_credit": 5,
+          "h_kudos": 1,
+          "pubs": 6,
+          "citations": 36,
+          "total_credit": 66.00863109646284
+        },
+        {
+          "author_id": 46,
+          "name": "Author_0046",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 35,
+          "total_credit": 80.67103793201836
+        },
+        {
+          "author_id": 35,
+          "name": "Author_0035",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 5,
+          "citations": 24,
+          "total_credit": 41.31688223061389
+        },
+        {
+          "author_id": 34,
+          "name": "Author_0034",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 5,
+          "citations": 20,
+          "total_credit": 30.57170187049978
+        },
+        {
+          "author_id": 33,
+          "name": "Author_0033",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 24,
+          "total_credit": 53.14792780105791
+        },
+        {
+          "author_id": 32,
+          "name": "Author_0032",
+          "h_credit": 4,
+          "h_kudos": 0,
+          "pubs": 4,
+          "citations": 33,
+          "total_credit": 124.3252493512304
+        },
+        {
+          "author_id": 17,
+          "name": "Author_0017",
+          "h_credit": 4,
+          "h_kudos": 0,
+          "pubs": 5,
+          "citations": 37,
+          "total_credit": 80.4692403485156
+        },
+        {
+          "author_id": 10,
+          "name": "Author_0010",
+          "h_credit": 4,
+          "h_kudos": 1,
+          "pubs": 5,
+          "citations": 47,
+          "total_credit": 270.68775980202037
+        },
+        {
+          "author_id": 9,
+          "name": "Author_0009",
+          "h_credit": 4,
+          "h_kudos": 0,
+          "pubs": 6,
+          "citations": 44,
+          "total_credit": 127.9513356316549
+        },
+        {
+          "author_id": 49,
+          "name": "Author_0049",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 3,
+          "citations": 30,
+          "total_credit": 97.34733792041102
+        },
+        {
+          "author_id": 47,
+          "name": "Author_0047",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 100.50379140526972
+        },
+        {
+          "author_id": 45,
+          "name": "Author_0045",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 34,
+          "total_credit": 239.13156701050562
+        },
+        {
+          "author_id": 43,
+          "name": "Author_0043",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 3,
+          "citations": 25,
+          "total_credit": 67.53956067064384
+        },
+        {
+          "author_id": 41,
+          "name": "Author_0041",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 3,
+          "citations": 19,
+          "total_credit": 36.30725935650742
+        },
+        {
+          "author_id": 40,
+          "name": "Author_0040",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 5,
+          "citations": 33,
+          "total_credit": 381.80735547556077
+        },
+        {
+          "author_id": 38,
+          "name": "Author_0038",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 3,
+          "citations": 28,
+          "total_credit": 97.42051268072079
+        },
+        {
+          "author_id": 37,
+          "name": "Author_0037",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 29,
+          "total_credit": 90.00627807977668
+        },
+        {
+          "author_id": 36,
+          "name": "Author_0036",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 4,
+          "citations": 25,
+          "total_credit": 70.25291459041355
+        },
+        {
+          "author_id": 31,
+          "name": "Author_0031",
+          "h_credit": 3,
+          "h_kudos": 1,
+          "pubs": 4,
+          "citations": 30,
+          "total_credit": 507.83050909802006
+        },
+        {
+          "author_id": 27,
+          "name": "Author_0027",
+          "h_credit": 3,
+          "h_kudos": 0,
+          "pubs": 3,
+          "citations": 24,
+          "total_credit": 55.007035503108426
+        }
+      ]
+    }
+  ]
+}

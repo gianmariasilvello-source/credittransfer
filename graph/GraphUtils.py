@@ -13,6 +13,8 @@ class Graph:
                     """
                     self.adjacency = {}
                     self.is_directed = is_directed
+                    # Maintain reverse adjacency for directed graphs to speed indegree/in_neighbors
+                    self._reverse_adjacency = {} if is_directed else None
 
                 def add_node(self, node):
                     """
@@ -23,6 +25,13 @@ class Graph:
                     """
                     if node not in self.adjacency:
                         self.adjacency[node] = set()
+                    if self.is_directed:
+                        if node not in self._reverse_adjacent_nodes():
+                            self._reverse_adjacency[node] = set()
+
+                def _reverse_adjacent_nodes(self):
+                    # Helper to avoid attribute checks in hot paths
+                    return self._reverse_adjacency if self._reverse_adjacency is not None else {}
 
                 def add_edge(self, node1, node2):
                     """
@@ -37,6 +46,9 @@ class Graph:
                     self.adjacency[node1].add(node2)
                     if not self.is_directed:
                         self.adjacency[node2].add(node1)
+                    else:
+                        # maintain reverse adjacency for directed graphs
+                        self._reverse_adjacency[node2].add(node1)
 
                 def get_neighbors(self, node):
                     """
@@ -49,6 +61,18 @@ class Graph:
                         A set of neighboring nodes.
                     """
                     return self.adjacency.get(node, set())
+
+                def in_neighbors(self, node):
+                    """Return nodes with edges into `node` (for directed graphs).
+                    For undirected graphs, this equals get_neighbors(node).
+                    """
+                    if self.is_directed:
+                        return self._reverse_adjacent_nodes().get(node, set())
+                    return self.get_neighbors(node)
+
+                def indegree(self, node):
+                    """Return the in-degree of `node`. For undirected graphs, returns degree."""
+                    return len(self.in_neighbors(node))
 
                 def nodes(self):
                     """
@@ -97,6 +121,73 @@ class Graph:
                         for j in range(len(nodes)):
                             if matrix[i][j]:
                                 graph.add_edge(nodes[i], nodes[j])
+                    return graph
+
+                @staticmethod
+                def from_edgelist(filepath, is_directed=True, comment_char='#', delimiter=None):
+                    """
+                    Load a graph from an edgelist file.
+
+                    File format: one edge per line as "source target"
+                    Lines starting with comment_char are ignored.
+
+                    Args:
+                        filepath: Path to the edgelist file
+                        is_directed: If True, creates a directed graph (default: True)
+                        comment_char: Character indicating comment lines (default: '#')
+                        delimiter: Delimiter between source and target (default: whitespace)
+
+                    Returns:
+                        A Graph object
+
+                    Example file format:
+                        # Citation network edgelist
+                        # source target
+                        0 1
+                        0 2
+                        1 3
+                        2 3
+
+                    Example usage:
+                        graph = Graph.from_edgelist('data/synthetic_edges.txt')
+                    """
+                    graph = Graph(is_directed=is_directed)
+
+                    with open(filepath, 'r') as f:
+                        for line_num, line in enumerate(f, 1):
+                            line = line.strip()
+
+                            # Skip empty lines and comments
+                            if not line or line.startswith(comment_char):
+                                continue
+
+                            # Parse edge
+                            try:
+                                if delimiter:
+                                    parts = line.split(delimiter)
+                                else:
+                                    parts = line.split()
+
+                                if len(parts) < 2:
+                                    print(f"Warning: Skipping malformed line {line_num}: {line}")
+                                    continue
+
+                                source = parts[0]
+                                target = parts[1]
+
+                                # Try to convert to int if possible (for integer node IDs)
+                                try:
+                                    source = int(source)
+                                    target = int(target)
+                                except ValueError:
+                                    pass  # Keep as strings
+
+                                graph.add_edge(source, target)
+
+                            except Exception as e:
+                                print(f"Warning: Error parsing line {line_num}: {line} - {e}")
+                                continue
+
                     return graph
 
                 def to_matrix(self):

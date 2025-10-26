@@ -1,0 +1,26 @@
+{
+  "n_nodes": 100,
+  "n_edges": 643,
+  "avg_in_degree": 6.43,
+  "avg_out_degree": 6.43,
+  "max_in_degree": 23,
+  "max_out_degree": 10,
+  "transitivity": 0.031382527565733676,
+  "type_distribution": {
+    "paper": 87,
+    "dataset": 13
+  },
+  "edges_by_mechanism": {
+    "preferential": 183,
+    "community": 142,
+    "transitive": 141,
+    "type_preference": 108,
+    "hierarchical": 69
+  },
+  "config": {
+    "n_communities": 5,
+    "powerlaw_exponent": 2.3,
+    "transitivity_prob": 0.25,
+    "within_community_prob": 0.7
+  }
+}
