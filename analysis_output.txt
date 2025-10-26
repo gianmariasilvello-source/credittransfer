@@ -1,0 +1,68 @@
+Loading authors from: source_graph_data/curated_MES/authors.jsonl
+  Loaded 21561 entries from authors file
+Loading relations from: source_graph_data/curated_MES/relations.jsonl
+  Loaded 82195 entries from relations file
+  Found 69053 HasAuthor relations
+
+================================================================================
+HASAUTHOR CORRESPONDENCE ANALYSIS
+================================================================================
+
+Total HasAuthor Relations:                    69053
+Unique nodes in relations:                     9549
+
+                             AUTHOR CORRESPONDENCE                              
+--------------------------------------------------------------------------------
+Authors in authors.jsonl:                     10252
+Authors in HasAuthor relations:               21560
+Authors in BOTH:                                  0
+Authors ONLY in file:                         10252
+Authors ONLY in relations:                    21560
+
+                          AUTHOR IDENTIFICATION METHOD                          
+--------------------------------------------------------------------------------
+Authors with simple ID (aXXXXX):              21560
+Authors with complex/unknown ID:                  0
+
+Authors overlap (file->relations):             0.0%
+Authors overlap (relations->file):             0.0%
+
+Sample authors ONLY in file (first 10):
+  https://academic.microsoft.com/#/detail/2146260627 |  Maria Lorena Longhi
+  0000-0002-3239-9760                                | Eichler, Jan
+  https://academic.microsoft.com/#/detail/2158743496 | Vincx, Magda
+  https://academic.microsoft.com/#/detail/2098996573 | Uno, Yoshinobu
+  https://academic.microsoft.com/#/detail/2108609846 | Fonseca, Rute R. da
+  https://academic.microsoft.com/#/detail/2953706892 | Kretschmer, Sven
+  https://academic.microsoft.com/#/detail/1998056737 | Rosani, Umberto
+  0000-0002-7923-1973                                | Sigman, Daniel M.
+  0000-0002-7320-0068                                | Jan Warzocha
+  0000-0003-0142-2398                                | Piñeiro, S. (Safo)
+
+Sample authors ONLY in relations (first 10):
+  a45469                                             | Unknown
+  a32523                                             | Unknown
+  a50222                                             | Unknown
+  a38387                                             | Unknown
+  a35404                                             | Unknown
+  a43164                                             | Unknown
+  a27525                                             | Unknown
+  a58145                                             | Unknown
+  a16863                                             | Unknown
+  a28474                                             | Unknown
+
+Sample nodes with authors (first 10):
+  50|doi_dedup___::499332c656c65b1a8cdd2619768993c2
+  50|doi_dedup___::4e757df959fd0b3454df9a3a3d7c3e1d
+  50|doi_dedup___::ed85922349ca8fee54868cf17495bef1
+  50|doi_dedup___::560b4b48838f2fea183ba9f06397c0aa
+  50|doi_dedup___::da2e547a67e2537d1773bd39a81bd35e
+  50|doi_________::4120316cd11d42d4159fe46acbddc6dd
+  50|doi_dedup___::3fd113d378c75295b360ad453add80de
+  50|doi_dedup___::03ea334a0b085e5cdb72766f8e6bf4e1
+  d25624
+  50|doi_dedup___::2c5b08b2990e61f098fcceb18589682d
+
+================================================================================
+
+Detailed analysis saved to: hasauthor_analysis.json

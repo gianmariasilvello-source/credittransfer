@@ -1,0 +1,25 @@
+{
+  "total_hasauthor_relations": 69053,
+  "authors_file_count": 21560,
+  "relations_hasauthor_count": 21560,
+  "authors_in_both": 21560,
+  "authors_only_in_file": 0,
+  "authors_only_in_relations": 0,
+  "nodes_in_relations": 9549,
+  "authors_by_simple_id": 21560,
+  "authors_by_complex_id": 0,
+  "sample_authors_only_in_file": [],
+  "sample_authors_only_in_relations": [],
+  "sample_nodes_in_relations": [
+    "50|dedup_wf_001::7b72288fdde9c05388fdfe914db507d6",
+    "50|doi_dedup___::7757626be98bf2cfac33ba509f64bfcd",
+    "50|doi_dedup___::e6426d5bbe877671a5c6b6ccd27d0a3b",
+    "50|doi_dedup___::204f1dafe9a94e91565ab6484a3fd940",
+    "50|doi_dedup___::a320e6a2fd1ea610356f8c3c359c4305",
+    "d25552",
+    "50|doi_dedup___::410a9929a2020a3ad17f6a6827e6b920",
+    "50|doi_dedup___::42c2279276643f0f99d37c3280996f4a",
+    "50|doi_dedup___::e83d9a099807a0adf03a6ec96f0b07b8",
+    "50|doi_dedup___::4e9c5a833d39efad8c52d67849bed579"
+  ]
+}

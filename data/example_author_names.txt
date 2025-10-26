@@ -1,0 +1,6 @@
+# Author names
+# Format: author_id author_name
+0 Alice Smith
+1 Bob Johnson
+2 Charlie Brown
+

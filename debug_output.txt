@@ -1,0 +1,74 @@
+Checking structure of HasAuthor relations...
+
+HasAuthor relation #1:
+  Full object: {
+  "source": "50|doi_dedup___::5dc926613730a6b0866136d22427f18a",
+  "target": "a26074",
+  "semantics": "HasAuthor",
+  "rank": "5"
+}
+
+HasAuthor relation #2:
+  Full object: {
+  "source": "50|doi_dedup___::5dc926613730a6b0866136d22427f18a",
+  "target": "a26072",
+  "semantics": "HasAuthor",
+  "rank": "3"
+}
+
+HasAuthor relation #3:
+  Full object: {
+  "source": "50|doi_dedup___::5dc926613730a6b0866136d22427f18a",
+  "target": "a26073",
+  "semantics": "HasAuthor",
+  "rank": "4"
+}
+
+HasAuthor relation #4:
+  Full object: {
+  "source": "50|doi_dedup___::5dc926613730a6b0866136d22427f18a",
+  "target": "a26070",
+  "semantics": "HasAuthor",
+  "rank": "1"
+}
+
+HasAuthor relation #5:
+  Full object: {
+  "source": "50|doi_dedup___::5dc926613730a6b0866136d22427f18a",
+  "target": "a26071",
+  "semantics": "HasAuthor",
+  "rank": "2"
+}
+
+================================================================================
+Checking structure of authors file...
+
+Authors entry #1:
+  Keys: ['name', 'surname', 'fullname', 'pid']
+  Sample: {
+  "name": "Svetlana N.",
+  "surname": "Losa",
+  "fullname": "Losa, Svetlana N.",
+  "pid": [
+    "0000-0003-2153-1954",
+    "https://academic.microsoft.com/#/detail/1963798351"
+  ]
+}
+
+Authors entry #2:
+  Keys: ['name', 'surname', 'fullname', 'pid']
+  Sample: {
+  "name": "George",
+  "surname": "Riggis",
+  "fullname": "Riggis, George",
+  "pid": []
+}
+
+Authors entry #3:
+  Keys: ['name', 'surname', 'fullname', 'pid']
+  Sample: {
+  "name": "Aleksandra",
+  "surname": "Wolanin",
+  "fullname": "Wolanin, Aleksandra",
+  "pid": []
+}

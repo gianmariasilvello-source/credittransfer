@@ -1,0 +1,9 @@
+# Adjacency matrix for example graph
+# Format: space-separated values, one row per line
+# This is a 5-node graph with citation relationships
+0 1 1 0 1
+0 0 1 1 0
+0 0 0 1 0
+0 0 0 0 0
+0 1 0 0 0
+
