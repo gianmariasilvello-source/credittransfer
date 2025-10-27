@@ -1,0 +1,1619 @@
+{
+  "timestamp": "2025-10-27T18:47:30.055789",
+  "experiments": [
+    {
+      "name": "Direct Citations Only (1.0, 1.0)",
+      "retention_rates": [
+        1.0,
+        1.0
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 3,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 3,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 3,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 3,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 3,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 3,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 3,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 3,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 3,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 3,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 3,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 3,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        },
+        {
+          "rank": 3,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 3,
+          "author_id": 1068,
+          "h_index": 9,
+          "name": "Author_1068"
+        },
+        {
+          "rank": 3,
+          "author_id": 1113,
+          "h_index": 9,
+          "name": "Author_1113"
+        },
+        {
+          "rank": 3,
+          "author_id": 1236,
+          "h_index": 9,
+          "name": "Author_1236"
+        },
+        {
+          "rank": 3,
+          "author_id": 1243,
+          "h_index": 9,
+          "name": "Author_1243"
+        },
+        {
+          "rank": 3,
+          "author_id": 1366,
+          "h_index": 9,
+          "name": "Author_1366"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 3,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 3,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 3,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 3,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 3,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 3,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 3,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 3,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 3,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 3,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 3,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 3,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        },
+        {
+          "rank": 3,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 3,
+          "author_id": 1068,
+          "h_index": 9,
+          "name": "Author_1068"
+        },
+        {
+          "rank": 3,
+          "author_id": 1113,
+          "h_index": 9,
+          "name": "Author_1113"
+        },
+        {
+          "rank": 3,
+          "author_id": 1236,
+          "h_index": 9,
+          "name": "Author_1236"
+        },
+        {
+          "rank": 3,
+          "author_id": 1243,
+          "h_index": 9,
+          "name": "Author_1243"
+        },
+        {
+          "rank": 3,
+          "author_id": 1366,
+          "h_index": 9,
+          "name": "Author_1366"
+        }
+      ]
+    },
+    {
+      "name": "Medium Retention (0.7, 0.5)",
+      "retention_rates": [
+        0.7,
+        0.5
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 2487,
+          "h_index": 9,
+          "name": "Author_2487"
+        },
+        {
+          "rank": 2,
+          "author_id": 48,
+          "h_index": 8,
+          "name": "Author_0048"
+        },
+        {
+          "rank": 2,
+          "author_id": 95,
+          "h_index": 8,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 2,
+          "author_id": 190,
+          "h_index": 8,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 2,
+          "author_id": 289,
+          "h_index": 8,
+          "name": "Author_0289"
+        },
+        {
+          "rank": 2,
+          "author_id": 302,
+          "h_index": 8,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 2,
+          "author_id": 329,
+          "h_index": 8,
+          "name": "Author_0329"
+        },
+        {
+          "rank": 2,
+          "author_id": 337,
+          "h_index": 8,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 2,
+          "author_id": 348,
+          "h_index": 8,
+          "name": "Author_0348"
+        },
+        {
+          "rank": 2,
+          "author_id": 383,
+          "h_index": 8,
+          "name": "Author_0383"
+        },
+        {
+          "rank": 2,
+          "author_id": 426,
+          "h_index": 8,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 2,
+          "author_id": 463,
+          "h_index": 8,
+          "name": "Author_0463"
+        },
+        {
+          "rank": 2,
+          "author_id": 465,
+          "h_index": 8,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 2,
+          "author_id": 680,
+          "h_index": 8,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 2,
+          "author_id": 687,
+          "h_index": 8,
+          "name": "Author_0687"
+        },
+        {
+          "rank": 2,
+          "author_id": 751,
+          "h_index": 8,
+          "name": "Author_0751"
+        },
+        {
+          "rank": 2,
+          "author_id": 887,
+          "h_index": 8,
+          "name": "Author_0887"
+        },
+        {
+          "rank": 2,
+          "author_id": 924,
+          "h_index": 8,
+          "name": "Author_0924"
+        },
+        {
+          "rank": 2,
+          "author_id": 931,
+          "h_index": 8,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 2,
+          "author_id": 1202,
+          "h_index": 8,
+          "name": "Author_1202"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 3,
+          "author_id": 95,
+          "h_index": 9,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 3,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 3,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 3,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 3,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 3,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 3,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 3,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 3,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 3,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 3,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 3,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 3,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        },
+        {
+          "rank": 3,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 3,
+          "author_id": 1068,
+          "h_index": 9,
+          "name": "Author_1068"
+        },
+        {
+          "rank": 3,
+          "author_id": 1113,
+          "h_index": 9,
+          "name": "Author_1113"
+        },
+        {
+          "rank": 3,
+          "author_id": 1236,
+          "h_index": 9,
+          "name": "Author_1236"
+        },
+        {
+          "rank": 3,
+          "author_id": 1243,
+          "h_index": 9,
+          "name": "Author_1243"
+        }
+      ]
+    },
+    {
+      "name": "Low Retention (0.5, 0.2)",
+      "retention_rates": [
+        0.5,
+        0.2
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 95,
+          "h_index": 8,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 2,
+          "author_id": 48,
+          "h_index": 7,
+          "name": "Author_0048"
+        },
+        {
+          "rank": 2,
+          "author_id": 61,
+          "h_index": 7,
+          "name": "Author_0061"
+        },
+        {
+          "rank": 2,
+          "author_id": 207,
+          "h_index": 7,
+          "name": "Author_0207"
+        },
+        {
+          "rank": 2,
+          "author_id": 218,
+          "h_index": 7,
+          "name": "Author_0218"
+        },
+        {
+          "rank": 2,
+          "author_id": 276,
+          "h_index": 7,
+          "name": "Author_0276"
+        },
+        {
+          "rank": 2,
+          "author_id": 302,
+          "h_index": 7,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 2,
+          "author_id": 329,
+          "h_index": 7,
+          "name": "Author_0329"
+        },
+        {
+          "rank": 2,
+          "author_id": 337,
+          "h_index": 7,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 2,
+          "author_id": 348,
+          "h_index": 7,
+          "name": "Author_0348"
+        },
+        {
+          "rank": 2,
+          "author_id": 426,
+          "h_index": 7,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 2,
+          "author_id": 451,
+          "h_index": 7,
+          "name": "Author_0451"
+        },
+        {
+          "rank": 2,
+          "author_id": 656,
+          "h_index": 7,
+          "name": "Author_0656"
+        },
+        {
+          "rank": 2,
+          "author_id": 671,
+          "h_index": 7,
+          "name": "Author_0671"
+        },
+        {
+          "rank": 2,
+          "author_id": 684,
+          "h_index": 7,
+          "name": "Author_0684"
+        },
+        {
+          "rank": 2,
+          "author_id": 697,
+          "h_index": 7,
+          "name": "Author_0697"
+        },
+        {
+          "rank": 2,
+          "author_id": 745,
+          "h_index": 7,
+          "name": "Author_0745"
+        },
+        {
+          "rank": 2,
+          "author_id": 804,
+          "h_index": 7,
+          "name": "Author_0804"
+        },
+        {
+          "rank": 2,
+          "author_id": 807,
+          "h_index": 7,
+          "name": "Author_0807"
+        },
+        {
+          "rank": 2,
+          "author_id": 892,
+          "h_index": 7,
+          "name": "Author_0892"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1068,
+          "h_index": 10,
+          "name": "Author_1068"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 1,
+          "author_id": 2362,
+          "h_index": 10,
+          "name": "Author_2362"
+        },
+        {
+          "rank": 5,
+          "author_id": 95,
+          "h_index": 9,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 5,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 5,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 5,
+          "author_id": 239,
+          "h_index": 9,
+          "name": "Author_0239"
+        },
+        {
+          "rank": 5,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 5,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 5,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 5,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 5,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 5,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 5,
+          "author_id": 672,
+          "h_index": 9,
+          "name": "Author_0672"
+        },
+        {
+          "rank": 5,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 5,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 5,
+          "author_id": 913,
+          "h_index": 9,
+          "name": "Author_0913"
+        },
+        {
+          "rank": 5,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 5,
+          "author_id": 945,
+          "h_index": 9,
+          "name": "Author_0945"
+        }
+      ]
+    },
+    {
+      "name": "Balanced Retention (0.5, 0.5)",
+      "retention_rates": [
+        0.5,
+        0.5
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 95,
+          "h_index": 8,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 1,
+          "author_id": 190,
+          "h_index": 8,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 1,
+          "author_id": 687,
+          "h_index": 8,
+          "name": "Author_0687"
+        },
+        {
+          "rank": 1,
+          "author_id": 1609,
+          "h_index": 8,
+          "name": "Author_1609"
+        },
+        {
+          "rank": 1,
+          "author_id": 1871,
+          "h_index": 8,
+          "name": "Author_1871"
+        },
+        {
+          "rank": 6,
+          "author_id": 42,
+          "h_index": 7,
+          "name": "Author_0042"
+        },
+        {
+          "rank": 6,
+          "author_id": 47,
+          "h_index": 7,
+          "name": "Author_0047"
+        },
+        {
+          "rank": 6,
+          "author_id": 48,
+          "h_index": 7,
+          "name": "Author_0048"
+        },
+        {
+          "rank": 6,
+          "author_id": 61,
+          "h_index": 7,
+          "name": "Author_0061"
+        },
+        {
+          "rank": 6,
+          "author_id": 70,
+          "h_index": 7,
+          "name": "Author_0070"
+        },
+        {
+          "rank": 6,
+          "author_id": 169,
+          "h_index": 7,
+          "name": "Author_0169"
+        },
+        {
+          "rank": 6,
+          "author_id": 207,
+          "h_index": 7,
+          "name": "Author_0207"
+        },
+        {
+          "rank": 6,
+          "author_id": 218,
+          "h_index": 7,
+          "name": "Author_0218"
+        },
+        {
+          "rank": 6,
+          "author_id": 238,
+          "h_index": 7,
+          "name": "Author_0238"
+        },
+        {
+          "rank": 6,
+          "author_id": 276,
+          "h_index": 7,
+          "name": "Author_0276"
+        },
+        {
+          "rank": 6,
+          "author_id": 299,
+          "h_index": 7,
+          "name": "Author_0299"
+        },
+        {
+          "rank": 6,
+          "author_id": 301,
+          "h_index": 7,
+          "name": "Author_0301"
+        },
+        {
+          "rank": 6,
+          "author_id": 302,
+          "h_index": 7,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 6,
+          "author_id": 329,
+          "h_index": 7,
+          "name": "Author_0329"
+        },
+        {
+          "rank": 6,
+          "author_id": 334,
+          "h_index": 7,
+          "name": "Author_0334"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 1,
+          "author_id": 2362,
+          "h_index": 10,
+          "name": "Author_2362"
+        },
+        {
+          "rank": 4,
+          "author_id": 95,
+          "h_index": 9,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 4,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 4,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 4,
+          "author_id": 239,
+          "h_index": 9,
+          "name": "Author_0239"
+        },
+        {
+          "rank": 4,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 4,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 4,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 4,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 4,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 4,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 4,
+          "author_id": 672,
+          "h_index": 9,
+          "name": "Author_0672"
+        },
+        {
+          "rank": 4,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 4,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 4,
+          "author_id": 913,
+          "h_index": 9,
+          "name": "Author_0913"
+        },
+        {
+          "rank": 4,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 4,
+          "author_id": 945,
+          "h_index": 9,
+          "name": "Author_0945"
+        },
+        {
+          "rank": 4,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        }
+      ]
+    },
+    {
+      "name": "Papers Only (0.5, 1.0)",
+      "retention_rates": [
+        0.5,
+        1.0
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 95,
+          "h_index": 8,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 1,
+          "author_id": 191,
+          "h_index": 8,
+          "name": "Author_0191"
+        },
+        {
+          "rank": 1,
+          "author_id": 360,
+          "h_index": 8,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 1,
+          "author_id": 364,
+          "h_index": 8,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 1,
+          "author_id": 582,
+          "h_index": 8,
+          "name": "Author_0582"
+        },
+        {
+          "rank": 1,
+          "author_id": 633,
+          "h_index": 8,
+          "name": "Author_0633"
+        },
+        {
+          "rank": 1,
+          "author_id": 919,
+          "h_index": 8,
+          "name": "Author_0919"
+        },
+        {
+          "rank": 1,
+          "author_id": 1113,
+          "h_index": 8,
+          "name": "Author_1113"
+        },
+        {
+          "rank": 1,
+          "author_id": 1366,
+          "h_index": 8,
+          "name": "Author_1366"
+        },
+        {
+          "rank": 1,
+          "author_id": 1499,
+          "h_index": 8,
+          "name": "Author_1499"
+        },
+        {
+          "rank": 1,
+          "author_id": 1524,
+          "h_index": 8,
+          "name": "Author_1524"
+        },
+        {
+          "rank": 1,
+          "author_id": 1609,
+          "h_index": 8,
+          "name": "Author_1609"
+        },
+        {
+          "rank": 1,
+          "author_id": 1664,
+          "h_index": 8,
+          "name": "Author_1664"
+        },
+        {
+          "rank": 1,
+          "author_id": 1739,
+          "h_index": 8,
+          "name": "Author_1739"
+        },
+        {
+          "rank": 1,
+          "author_id": 1871,
+          "h_index": 8,
+          "name": "Author_1871"
+        },
+        {
+          "rank": 1,
+          "author_id": 1883,
+          "h_index": 8,
+          "name": "Author_1883"
+        },
+        {
+          "rank": 1,
+          "author_id": 1978,
+          "h_index": 8,
+          "name": "Author_1978"
+        },
+        {
+          "rank": 1,
+          "author_id": 2223,
+          "h_index": 8,
+          "name": "Author_2223"
+        },
+        {
+          "rank": 1,
+          "author_id": 2376,
+          "h_index": 8,
+          "name": "Author_2376"
+        },
+        {
+          "rank": 1,
+          "author_id": 2476,
+          "h_index": 8,
+          "name": "Author_2476"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 1,
+          "author_id": 2362,
+          "h_index": 10,
+          "name": "Author_2362"
+        },
+        {
+          "rank": 4,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 4,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 4,
+          "author_id": 239,
+          "h_index": 9,
+          "name": "Author_0239"
+        },
+        {
+          "rank": 4,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 4,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 4,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 4,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 4,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 4,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 4,
+          "author_id": 672,
+          "h_index": 9,
+          "name": "Author_0672"
+        },
+        {
+          "rank": 4,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 4,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 4,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 4,
+          "author_id": 945,
+          "h_index": 9,
+          "name": "Author_0945"
+        },
+        {
+          "rank": 4,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        },
+        {
+          "rank": 4,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 4,
+          "author_id": 1068,
+          "h_index": 9,
+          "name": "Author_1068"
+        }
+      ]
+    },
+    {
+      "name": "Datasets Only (1.0, 0.5)",
+      "retention_rates": [
+        1.0,
+        0.5
+      ],
+      "top_20_kudos": [
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 2,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 2,
+          "author_id": 426,
+          "h_index": 9,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 2,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 2,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 2,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 2,
+          "author_id": 1236,
+          "h_index": 9,
+          "name": "Author_1236"
+        },
+        {
+          "rank": 2,
+          "author_id": 2184,
+          "h_index": 9,
+          "name": "Author_2184"
+        },
+        {
+          "rank": 2,
+          "author_id": 2362,
+          "h_index": 9,
+          "name": "Author_2362"
+        },
+        {
+          "rank": 2,
+          "author_id": 2517,
+          "h_index": 9,
+          "name": "Author_2517"
+        },
+        {
+          "rank": 11,
+          "author_id": 15,
+          "h_index": 8,
+          "name": "Author_0015"
+        },
+        {
+          "rank": 11,
+          "author_id": 48,
+          "h_index": 8,
+          "name": "Author_0048"
+        },
+        {
+          "rank": 11,
+          "author_id": 59,
+          "h_index": 8,
+          "name": "Author_0059"
+        },
+        {
+          "rank": 11,
+          "author_id": 61,
+          "h_index": 8,
+          "name": "Author_0061"
+        },
+        {
+          "rank": 11,
+          "author_id": 68,
+          "h_index": 8,
+          "name": "Author_0068"
+        },
+        {
+          "rank": 11,
+          "author_id": 95,
+          "h_index": 8,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 11,
+          "author_id": 125,
+          "h_index": 8,
+          "name": "Author_0125"
+        },
+        {
+          "rank": 11,
+          "author_id": 142,
+          "h_index": 8,
+          "name": "Author_0142"
+        },
+        {
+          "rank": 11,
+          "author_id": 177,
+          "h_index": 8,
+          "name": "Author_0177"
+        },
+        {
+          "rank": 11,
+          "author_id": 190,
+          "h_index": 8,
+          "name": "Author_0190"
+        }
+      ],
+      "top_20_credit": [
+        {
+          "rank": 1,
+          "author_id": 426,
+          "h_index": 10,
+          "name": "Author_0426"
+        },
+        {
+          "rank": 1,
+          "author_id": 1487,
+          "h_index": 10,
+          "name": "Author_1487"
+        },
+        {
+          "rank": 3,
+          "author_id": 95,
+          "h_index": 9,
+          "name": "Author_0095"
+        },
+        {
+          "rank": 3,
+          "author_id": 190,
+          "h_index": 9,
+          "name": "Author_0190"
+        },
+        {
+          "rank": 3,
+          "author_id": 236,
+          "h_index": 9,
+          "name": "Author_0236"
+        },
+        {
+          "rank": 3,
+          "author_id": 302,
+          "h_index": 9,
+          "name": "Author_0302"
+        },
+        {
+          "rank": 3,
+          "author_id": 337,
+          "h_index": 9,
+          "name": "Author_0337"
+        },
+        {
+          "rank": 3,
+          "author_id": 360,
+          "h_index": 9,
+          "name": "Author_0360"
+        },
+        {
+          "rank": 3,
+          "author_id": 364,
+          "h_index": 9,
+          "name": "Author_0364"
+        },
+        {
+          "rank": 3,
+          "author_id": 465,
+          "h_index": 9,
+          "name": "Author_0465"
+        },
+        {
+          "rank": 3,
+          "author_id": 467,
+          "h_index": 9,
+          "name": "Author_0467"
+        },
+        {
+          "rank": 3,
+          "author_id": 680,
+          "h_index": 9,
+          "name": "Author_0680"
+        },
+        {
+          "rank": 3,
+          "author_id": 902,
+          "h_index": 9,
+          "name": "Author_0902"
+        },
+        {
+          "rank": 3,
+          "author_id": 931,
+          "h_index": 9,
+          "name": "Author_0931"
+        },
+        {
+          "rank": 3,
+          "author_id": 1010,
+          "h_index": 9,
+          "name": "Author_1010"
+        },
+        {
+          "rank": 3,
+          "author_id": 1044,
+          "h_index": 9,
+          "name": "Author_1044"
+        },
+        {
+          "rank": 3,
+          "author_id": 1068,
+          "h_index": 9,
+          "name": "Author_1068"
+        },
+        {
+          "rank": 3,
+          "author_id": 1113,
+          "h_index": 9,
+          "name": "Author_1113"
+        },
+        {
+          "rank": 3,
+          "author_id": 1236,
+          "h_index": 9,
+          "name": "Author_1236"
+        },
+        {
+          "rank": 3,
+          "author_id": 1243,
+          "h_index": 9,
+          "name": "Author_1243"
+        }
+      ]
+    }
+  ],
+  "kendall_tau_kudos": [
+    [
+      1.0,
+      0.5765788596198733,
+      0.4293964654884962,
+      0.49134111370456823,
+      0.5084997221295987,
+      0.6647335778592864
+    ],
+    [
+      0.5765788596198733,
+      1.0,
+      0.593239524285873,
+      0.6699899966655551,
+      0.4886957874847172,
+      0.6501233744581527
+    ],
+    [
+      0.4293964654884962,
+      0.593239524285873,
+      1.0,
+      0.6140940313437813,
+      0.44086828942980993,
+      0.5105195065021675
+    ],
+    [
+      0.49134111370456823,
+      0.6699899966655551,
+      0.6140940313437813,
+      1.0,
+      0.6562276314326998,
+      0.503943536734467
+    ],
+    [
+      0.5084997221295987,
+      0.4886957874847172,
+      0.44086828942980993,
+      0.6562276314326998,
+      1.0,
+      0.35703056574413694
+    ],
+    [
+      0.6647335778592864,
+      0.6501233744581527,
+      0.5105195065021675,
+      0.503943536734467,
+      0.35703056574413694,
+      1.0
+    ]
+  ],
+  "kendall_tau_credit": [
+    [
+      1.0,
+      0.9811408247193508,
+      0.9456956763365566,
+      0.9598043792375236,
+      0.9772724241413805,
+      0.9946764477047905
+    ],
+    [
+      0.9811408247193508,
+      1.0,
+      0.9629854395909747,
+      0.9777583638990776,
+      0.9779033011003668,
+      0.9863176614427032
+    ],
+    [
+      0.9456956763365566,
+      0.9629854395909747,
+      1.0,
+      0.9845130599088586,
+      0.9668182727575858,
+      0.9504590419028565
+    ],
+    [
+      0.9598043792375236,
+      0.9777583638990776,
+      0.9845130599088586,
+      1.0,
+      0.9817192397465823,
+      0.9647349116372125
+    ],
+    [
+      0.9772724241413805,
+      0.9779033011003668,
+      0.9668182727575858,
+      0.9817192397465823,
+      1.0,
+      0.9719488718461708
+    ],
+    [
+      0.9946764477047905,
+      0.9863176614427032,
+      0.9504590419028565,
+      0.9647349116372125,
+      0.9719488718461708,
+      1.0
+    ]
+  ],
+  "experiment_names": [
+    "Direct Citations Only (1.0, 1.0)",
+    "Medium Retention (0.7, 0.5)",
+    "Low Retention (0.5, 0.2)",
+    "Balanced Retention (0.5, 0.5)",
+    "Papers Only (0.5, 1.0)",
+    "Datasets Only (1.0, 0.5)"
+  ]
+}
