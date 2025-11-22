@@ -8,6 +8,18 @@
 \parindent 0pt
 \parskip 6pt
 
+\newcommand{\ku}{\mbox{\sf ku}}
+
+\newcommand{\cb}{\bm{c}}
+\newcommand{\kb}{\bm{k}}
+\newcommand{\A}{\bm{A}}
+\newcommand{\E}{\bm{E}}
+\newcommand{\I}{\bm{I}}
+\newcommand{\one}{\bm{1}} 
+\newcommand{\vb}{\bm{v}} 
+\newcommand{\tp}[1]{#1\!^{\top}}
+\newcommand{\AT}{\tp{\A}}
+
 \begin{document}
 This note is about cycles in the citation graph; their connection to
 subsumption and possibly to web pages.
@@ -19,6 +31,44 @@ kudos make sense and the can show that what goes in must come out, we
 can get large credit for nodes.  The simplest example is when we have
 two documents $D_1$ and $D_2$.  $D_1$ sends all its credit to $D_2$
 and  $D_2$ keeps 10\% of the kudos and transfers the remaining 90\% to
-D_1$
+$D_1$.  Moreover, one unit of credit flows into $D_1$.
 
-If you follow the workings [{\tt test3.py} in this directory] $D_1 gives all its credit to 
+Following the notation in my ``notes'' document  ($\A$ is the
+credit transfer matrix; $\cb$ $\vb$ and $\kb$ are vectors which give,
+at each node, the credit, input and kudos; and $\one$ is a vector of
+one)  we solve 
+\[
+\cb = \AT\cb+\vb\ \  \mbox{and}\ \   \kb = \cb -
+(\A\one)\times\cb\ \  \mbox{when}\ \ 
+\A = \left[\begin{array}{cc}
+  0 & 1\\
+  0.9 & 0
+\end{array}\right]
+\ \ and \ \ \vb = \left[\begin{array}{c} 1 \\ 0 \end{array}\right]
+\]
+
+which gives
+\[ \kb = \left[\begin{array}{c} 0\\1 \end{array}\right] \ \ \ \ \cb =
+\left[\begin{array}{c} 10\\10 \end{array}\right] \]
+
+Why such a high credit total in each node.  In an acyclic graph the
+credit at any node would surely be less than the total input to all
+the ancestors of that node.
+
+Maybe to explain this, consider the following acyclic structure
+representing a simple, but highly artificial set of events.
+
+\centerline{\includegraphics[scale=0.5]{zigzag.pdf}}
+
+At time 0, document $D_1^0$ is published. It doesn't cite anything, so
+it gets to keep all its input as kudos.  At time 1, document $D_2^1$ is
+published.  It cites $D_1^0$ and transfers 90\% of its credit to
+$D_1^0$. At time 3 a new version, $D_1^3$, of $D_1^0$ is published.
+The text has chamged, and it cites $D_2^1$. It also decides to
+transfer all its credit to $D_2^1$.  Seeing that $D_1^3 has appeared
+the author of $D_2^1$ publishes a new paper $D_2^4$ and cites $D_1^3$
+but does not cite anything else, and keeps the same credit transfer
+policy. Similarly $D_1^5$ is published and then $D_2^6$ and so on...
+
+
+\end{document}

@@ -1,3 +1,4 @@
+import numpy as np
 
 # Build A
 A = np.array([[0,   1],
