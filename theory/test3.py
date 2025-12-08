@@ -3,7 +3,7 @@ import numpy as np
 # Build A
 A = np.array([[0,   1],
               [0.9, 0]])
-v = np.array([1,0])
+v = np.array([0,1])
 
 I = np.eye(A.shape[0])
 
