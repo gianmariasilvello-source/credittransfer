@@ -239,6 +239,35 @@ See **[SYNTHETIC_GRAPHS_GUIDE.md](SYNTHETIC_GRAPHS_GUIDE.md)** for:
 - Output interpretation
 - Advanced examples
 
+## Large-Scale Data Processing
+
+Process multi-type citation graphs from SQL databases (50GB+) with efficient serialization.
+
+### Quick Start
+```bash
+# 1. Extract from SQL database
+python3 extract_from_sql.py
+
+# 2. Load and run credit transfer
+python3 load_large_scale_data.py
+```
+
+### Features
+- **SQL database extraction** - PostgreSQL batch processing
+- **Multi-type graphs** - Papers, patents, clinical trials
+- **Memory-efficient** - Sparse matrices with compressed serialization
+- **Author h-indices** - Large-scale author metrics
+- **50M+ nodes** - Scales to billions of edges
+
+### Complete Guide
+See **[LARGE_SCALE_DATA_GUIDE.md](LARGE_SCALE_DATA_GUIDE.md)** for:
+- SQL database schema
+- Extraction workflow
+- Serialization formats
+- Performance optimization
+- Memory requirements
+- Troubleshooting
+
 ## Testing
 
 ```bash
