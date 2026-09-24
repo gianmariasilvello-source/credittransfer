@@ -284,7 +284,7 @@ python3 test/test_author_metrics.py
 
 ```bibtex
 @software{credit_transfer_2025,
-authors = {Peter Bunamn, Matteo Lissandrini, Gianmaria Silvello}
+authors = {Peter Buneman, Matteo Lissandrini, Gianmaria Silvello}
   title={Credit Transfer: Transitive Credit Distribution for Citation Networks},
   year={2025}
 }
