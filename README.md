@@ -170,7 +170,10 @@ graph = Graph.from_matrix(nodes, matrix, is_directed=True)
 **Benchmarks:**
 - 1,000 nodes: ~0.1s
 - 10,000 nodes: ~1.2s
-- 100,000 nodes: ~45s
+- 100,000 nodes / 1.9M edges (acyclic): ~0.1s credit solve
+- 1,000,000 nodes / 19M edges (acyclic): ~1s credit solve
+
+See [Experiments and Analyses](#experiments-and-analyses) for the full large-scale timings.
 
 ## File Structure
 
@@ -184,7 +187,11 @@ CreditTransferProject/
 │   └── GraphUtils.py             # Graph structure
 ├── dataprocessing/
 │   ├── MESProcessor.py           # MES data parser
+│   ├── author_dedup.py           # MES author deduplication
+│   ├── simple_jev.py             # Minimal Simple Jev client
 │   └── MES_SEMANTICS_REFERENCE.md
+├── analyses/                     # Experiment scripts, reports, plots, tables
+│   └── FINDINGS_REPORT.md
 ├── experiments/
 │   ├── prepare_mes_data.py
 │   └── run_mes_experiment.py
@@ -209,9 +216,37 @@ CreditTransferProject/
 - `references`, `cites` - Citation relationships
 - `HasAuthor` - Node to author mappings
 - `IsSupplementTo`, `IsSupplementedBy` - Supplementary relationships
-- `isPartOf` - Hierarchical relationships
+- `IsPartOf`, `HasPart` - Hierarchical relationships
+- `documents`, `IsDocumentedBy` - Documentation relationships
+
+Semantics are matched case-insensitively (the curated data uses DataCite capitalization
+such as `Cites`/`IsPartOf`; older exports used lower camel case). Relations whose curation
+`status` is `Removed` are skipped by default; pass `excluded_statuses=set()` to
+`MESDataParser` to keep them. Dropped and unrecognized relations are counted in the
+parser summary.
 
 See `dataprocessing/MES_SEMANTICS_REFERENCE.md` for complete details.
+
+### Author Deduplication
+
+The MES authors file has one record per author *mention source*, so one person can appear
+under several ids (`Brewin, Robert J. W.`, `Brewin, RJW`, `R Brewin`), which splits their
+credit. `dataprocessing/author_dedup.py` merges them:
+
+1. **Blocking**: pairs with the same normalized surname and compatible given names
+2. **Hard rules**: same ORCID → merge; different ORCIDs → keep apart
+3. **Judgment**: remaining pairs are scored by TypeSafe or Simple Jev (same person / curator review / different people)
+4. **Clustering**: union-find over merged pairs → `author_id -> canonical author_id`
+
+```bash
+python -m dataprocessing.author_dedup --candidates-only   # blocking + rules only, no API calls
+python -m dataprocessing.author_dedup --eval 100          # score ORCID-labeled pairs (needs TYPESAFE_API_KEY)
+python -m dataprocessing.author_dedup                     # judge all pairs, write merges
+python -m dataprocessing.author_dedup --backend simple-jev --eval 100
+```
+
+Candidate pairs are written to `data/author_dedup/candidates.jsonl`. Judgments are cached
+per backend model, so both backends can be compared on the same pairs.
 
 ## Synthetic Graph Generation
 
@@ -268,6 +303,97 @@ See **[LARGE_SCALE_DATA_GUIDE.md](LARGE_SCALE_DATA_GUIDE.md)** for:
 - Memory requirements
 - Troubleshooting
 
+## Experiments and Analyses
+
+Scripts in `analyses/` reproduce the experiments below. Run them from the project root;
+each writes its plots (PDF + PNG), tables (CSV + TXT) and a text/Markdown report to the
+output folder listed. Retention `r = 1` means no transitive transfer (direct citations
+only) and is the baseline throughout.
+
+| Experiment | Script | Output |
+|---|---|---|
+| PubMed h-index vs retention rate | `pubmed_hindex_ranking_analysis.py` | `analyses/plots/`, `analyses/tables/`, `analyses/analysis_report.txt` |
+| Top-500 overlap across retention rates | `top500_transitivity_overlap_analysis.py` | `analyses/transitivity_top500_overlap/` |
+| SOTA baselines (Katz, PageRank) vs h-index | `sota_hindex_comparison_analysis.py` | `analyses/sota_hindex_comparison/` |
+| Top-500 overlap with SOTA baselines | `top500_sota_baseline_analysis.py` | `analyses/sota_hindex_comparison/` |
+| Synthetic kudos vs citation h-index (100K, 1M nodes) | `synthetic_100k_kudos_vs_citation_experiment.py` | `analyses/synthetic_{100k,1m}_kudos_vs_citation/` |
+| Synthetic graph size (100, 1K, 10K nodes) | `synthetic_graph_size_experiments.py` | `analyses/synthetic_size_report/` |
+| Impact of loops/cycles on convergence | `loop_impact_large_synthetic_analysis.py` | `analyses/loop_impact_report/` |
+
+The written-up findings for the PubMed experiment are in
+**[analyses/FINDINGS_REPORT.md](analyses/FINDINGS_REPORT.md)**.
+
+### PubMed: transitive credit vs retention rate
+
+Inputs: precomputed author h-indices in `data/pubmed/` at `r = 1, 0.75, 0.5, 0.25`.
+Every comparison is against `r = 1`; variations are never mixed.
+
+```bash
+python3 analyses/pubmed_hindex_ranking_analysis.py
+python3 analyses/top500_transitivity_overlap_analysis.py
+```
+
+| Variation | Gainers | Losers | Max gain | Top-500 overlap |
+|---|--:|--:|--:|--:|
+| r = 1 → 0.75 | 11.1% | 75.3% | +29 | 90.0% |
+| r = 1 → 0.50 | 10.5% | 84.8% | +62 | 76.6% |
+| r = 1 → 0.25 | 7.1% | 91.2% | +96 | 58.8% |
+
+Most authors lose h-index as retention drops, while a small minority, whose papers are
+cited by highly cited work, gains substantially.
+
+### State-of-the-art baselines: Katz and PageRank
+
+Inputs: `data/pubmed/pkg24s4_1_author_hindices.txt` (baseline) and
+`data/sota_hindex/{katz,pagerank}_hindex_500k.txt`.
+
+```bash
+python3 analyses/sota_hindex_comparison_analysis.py
+python3 analyses/top500_sota_baseline_analysis.py
+```
+
+Both baselines reorder the ranking far more than transitive credit does: the baseline
+top-500 overlaps 49.2% with Katz and 31.6% with PageRank (vs 58.8–90.0% above), and
+Top-10 Spearman correlation is −0.06 (Katz) and −0.61 (PageRank).
+
+### Synthetic: kudos vs citation h-index at scale
+
+Generates an acyclic multi-type graph (papers, datasets, software; ~19 references per
+node), assigns authors with power-law productivity, computes kudos with uniform
+retention 0.5, and compares author h-indices from kudos vs raw citation counts.
+
+```bash
+python3 analyses/synthetic_100k_kudos_vs_citation_experiment.py \
+    --n-nodes 100000 --n-authors 30000 --n-communities 40 --seed 20260701
+python3 analyses/synthetic_100k_kudos_vs_citation_experiment.py \
+    --n-nodes 1000000 --n-authors 303030 --n-communities 400 --seed 20260701
+```
+
+| Nodes | Edges | Credit solve | Kendall τ (top-1000, citation vs kudos) |
+|--:|--:|--:|--:|
+| 100K | 1.9M | 0.08 s | 0.64 |
+| 1M | 19.0M | 0.93 s | 0.52 |
+
+Use the exact arguments above to reproduce the committed results: without
+`--n-authors`, the author count is scaled from the node count and the rankings change.
+Timings are from an Apple M2 (24 GB).
+
+### Synthetic graph size and loop impact
+
+```bash
+python3 analyses/synthetic_graph_size_experiments.py
+python3 analyses/loop_impact_large_synthetic_analysis.py
+```
+
+- **Graph size** regenerates the small, 1K and 10K synthetic graphs from
+  `config/synthetic_*.properties` and compares density, degree, transitivity and type mix.
+  Note that it overwrites the graph files in `data/synthetic*/` (deterministic for a fixed seed).
+- **Loop impact** adds self-loops or reversed edges to the 10K graph and measures the
+  spectral radius ρ of the citation transfer matrix (before retention is applied). The
+  acyclic baseline has ρ = 0; 1–5% reversed edges give ρ ≈ 0.99–1.00; 1% self-loops give
+  ρ = 1, so the report flags self-loops as the highest-risk perturbation for convergence.
+  See `analyses/loop_impact_report/LOOP_TREATMENT_IMPACT_LARGE_SYNTHETIC.md`.
+
 ## Testing
 
 ```bash
@@ -275,6 +401,8 @@ python3 -m pytest test/
 python3 test/test_fully_optimized.py
 python3 test/test_author_metrics.py
 ```
+
+The test suite runs in about 30 seconds. Install `pytest` first if your environment does not have it.
 
 ## License
 
@@ -292,5 +420,5 @@ authors = {Peter Buneman, Matteo Lissandrini, Gianmaria Silvello}
 
 ---
 
-**Date:** October 26, 2025
+**Date:** October 1, 2026
 
