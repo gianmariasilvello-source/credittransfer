@@ -24,7 +24,7 @@ def test_small_graph():
     config_file = os.path.join(project_root, 'config', 'synthetic_small.properties')
 
     generator = SyntheticCitationGraphGenerator(config_file)
-    graph, node_types, metadata = generator.generate()
+    graph, node_types, node_to_authors, metadata = generator.generate()
 
     # Verify basic properties
     assert len(graph.nodes()) == 100, "Should have 100 nodes"
@@ -63,7 +63,7 @@ def test_degree_distributions():
     config_file = os.path.join(project_root, 'config', 'synthetic_small.properties')
 
     generator = SyntheticCitationGraphGenerator(config_file)
-    graph, node_types, metadata = generator.generate()
+    graph, node_types, node_to_authors, metadata = generator.generate()
 
     # Compute degree distributions
     in_degrees = np.zeros(100)
@@ -102,7 +102,7 @@ def test_community_structure():
     generator = SyntheticCitationGraphGenerator(config_file)
 
     # Access internal community assignments
-    graph, node_types, metadata = generator.generate()
+    graph, node_types, node_to_authors, metadata = generator.generate()
 
     # Check that community mechanism was used
     assert metadata['edges_by_mechanism']['community'] > 0, "Should have community-based edges"
@@ -123,10 +123,10 @@ def test_serialization():
     config_file = os.path.join(project_root, 'config', 'synthetic_small.properties')
 
     generator = SyntheticCitationGraphGenerator(config_file)
-    graph, node_types, metadata = generator.generate()
+    graph, node_types, node_to_authors, metadata = generator.generate()
 
     # Save to files
-    generator.save_to_files(graph, node_types, metadata)
+    generator.save_to_files(graph, node_types, node_to_authors, metadata)
 
     # Verify files exist
     output_dir = generator.config['output_dir']

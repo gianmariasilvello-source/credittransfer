@@ -832,13 +832,23 @@ def write_report(output_dir: str, cfg: ExperimentConfig, hw_info: Dict[str, str]
         f.write(f"| h-index for all authors, from **KUDOS** | {t_hindex_kudos:.4f} |\n")
         f.write(f"| h-index for all authors, from **traditional citations** (in-degree) | "
                 f"{t_hindex_citation:.4f} |\n\n")
+        if t_credit >= max(t_hindex_kudos, t_hindex_citation):
+            cost_sentence = (
+                'The dominant cost is the '
+                f'credit-distribution sparse linear solve ({t_credit:.4f} s), which the h-index step '
+                'reuses without re-deriving kudos or citations.'
+            )
+        else:
+            cost_sentence = (
+                'The per-author h-index aggregation dominates; the credit-distribution sparse '
+                f'linear solve takes only {t_credit:.4f} s, and the h-index step reuses its output '
+                'without re-deriving kudos or citations.'
+            )
         f.write(
             f"The citation-based h-index computation took **{speed_ratio:.3f}x** the time of the "
             'kudos-based computation (both use the identical per-author aggregation code path from '
             '`AuthorMetrics`; any difference reflects value distribution / sorting cost, not '
-            'algorithmic complexity, since both are O(A x P log P)). The dominant cost by far is the '
-            f'credit-distribution sparse linear solve ({t_credit:.4f} s), which the h-index step '
-            'reuses without re-deriving kudos or citations.\n\n'
+            f'algorithmic complexity, since both are O(A x P log P)). {cost_sentence}\n\n'
         )
         f.write(f"Conservation check: total kudos = {credit_diag['total_kudos']:.2f}, "
                 f"total external credit (sum of in-degrees) = {credit_diag['total_external_credit']:.2f}, "

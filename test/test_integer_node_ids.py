@@ -181,8 +181,11 @@ def test_performance_integer_vs_dict():
 
         speedup = time_dict / time_int if time_int > 0 else float('inf')
 
-        # Verify results match
-        assert np.allclose(tc_dict, tc_int), f"Results should match for n={n}"
+        # Verify results match (dict mode orders entries by graph insertion order,
+        # integer mode by node id, so align by node before comparing)
+        tc_dict_by_node = np.empty_like(tc_dict)
+        tc_dict_by_node[np.array(gct_dict.nodes_list)] = tc_dict
+        assert np.allclose(tc_dict_by_node, tc_int), f"Results should match for n={n}"
 
         print("{:<10} {:<15.2f} {:<15.2f} {:<10.2f}x".format(
             n, time_dict, time_int, speedup

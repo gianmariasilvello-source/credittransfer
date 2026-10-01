@@ -1,6 +1,6 @@
 # Synthetic 1M-Node Credit Transfer Experiment
 
-*Generated: 2026-07-01T16:42:58.173187*
+*Generated: 2026-10-01T13:39:05.448518*
 
 ## 1. Experiment Description
 
@@ -18,7 +18,7 @@ The credit-transfer model used a **uniform retention rate of 0.5 for all node ty
 
 | Property | Value |
 |---|---|
-| OS | macOS-26.5.1-arm64-arm-64bit |
+| OS | macOS-26.6.2-arm64-arm-64bit |
 | CPU | Apple M2 |
 | CPU cores (logical / physical) | 8 / 8 |
 | Total RAM | 24.0 GB |
@@ -36,7 +36,7 @@ The credit-transfer model used a **uniform retention rate of 0.5 for all node ty
 | Software nodes | 272,387 (27.2%) |
 | Authors | 303,030 |
 | Retention rate (all types) | 0.5 |
-| Graph generation wall time | 33.22 s |
+| Graph generation wall time | 20.10 s |
 
 ## 4. Wall-Clock Timing Comparison
 
@@ -44,11 +44,11 @@ Timings were measured with `time.perf_counter()` around the isolated computation
 
 | Computation | Wall time (s) |
 |---|---|
-| Build sparse transfer matrix + solve for kudos & total credit | 1.4825 |
-| h-index for all authors, from **KUDOS** | 4.1261 |
-| h-index for all authors, from **traditional citations** (in-degree) | 4.1245 |
+| Build sparse transfer matrix + solve for kudos & total credit | 0.9253 |
+| h-index for all authors, from **KUDOS** | 2.2247 |
+| h-index for all authors, from **traditional citations** (in-degree) | 2.2424 |
 
-The citation-based h-index computation took **1.000x** the time of the kudos-based computation (both use the identical per-author aggregation code path from `AuthorMetrics`; any difference reflects value distribution / sorting cost, not algorithmic complexity, since both are O(A x P log P)). The dominant cost by far is the credit-distribution sparse linear solve (1.4825 s), which the h-index step reuses without re-deriving kudos or citations.
+The citation-based h-index computation took **1.008x** the time of the kudos-based computation (both use the identical per-author aggregation code path from `AuthorMetrics`; any difference reflects value distribution / sorting cost, not algorithmic complexity, since both are O(A x P log P)). The per-author h-index aggregation dominates; the credit-distribution sparse linear solve takes only 0.9253 s, and the h-index step reuses its output without re-deriving kudos or citations.
 
 Conservation check: total kudos = 19000677.00, total external credit (sum of in-degrees) = 19000677.00, error = 7.45e-09.
 

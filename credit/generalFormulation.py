@@ -74,8 +74,10 @@ class GeneralCreditTransfer:
 
         # Determine indexing strategy
         if use_integer_indices is None:
-            # Auto-detect: use integer indexing if all nodes are integers
-            use_integer_indices = all(isinstance(node, (int, np.integer)) for node in self.nodes_list)
+            # Auto-detect: use integer indexing only if nodes are the integers 0..n-1,
+            # otherwise fall back to dictionary mode
+            use_integer_indices = (all(isinstance(node, (int, np.integer)) for node in self.nodes_list)
+                                   and self._validate_integer_nodes())
 
         self.use_integer_indices = use_integer_indices
 
