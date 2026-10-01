@@ -24,15 +24,15 @@ total_credit, kudos, _ = ct.compute_credit_distribution()
 - **Transitive credit** distribution without global damping
 - **Multi-type nodes** (papers, datasets, software) with different retention rates
 - **Author h-index** calculation from kudos
-- **Sparse matrices** for large graphs (100K+ nodes)
+- **Sparse matrices** for large graphs
 - **Integer indexing** for 10-50x performance boost
 - **Property file** configuration
 
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/CreditTransferProject.git
-cd CreditTransferProject
+git clone https://github.com/gianmariasilvello-source/credittransfer.git
+cd credittransfer
 pip install -r requirements.txt
 ```
 
@@ -164,21 +164,28 @@ graph = Graph.from_matrix(nodes, matrix, is_directed=True)
 ## Performance
 
 - **Integer indexing**: 10-50x faster for large graphs
-- **Sparse matrices**: Handles 100K+ nodes efficiently
+- **Sparse matrices**: CSR transfer matrix and sparse linear solve
 - **Vectorized operations**: NumPy for author metrics
 
-**Benchmarks:**
-- 1,000 nodes: ~0.1s
-- 10,000 nodes: ~1.2s
-- 100,000 nodes / 1.9M edges (acyclic): ~0.1s credit solve
-- 1,000,000 nodes / 19M edges (acyclic): ~1s credit solve
+**Benchmarks** (Apple M2, 24 GB; uniform retention 0.5; 1K/10K are the median of 5 runs):
 
-See [Experiments and Analyses](#experiments-and-analyses) for the full large-scale timings.
+| Graph | Nodes | Edges | `GeneralCreditTransfer` | Triangular solve (acyclic only) |
+|---|--:|--:|--:|--:|
+| `data/synthetic/` | 1K | 14K | 0.02 s (0.06 s with convergence check) | – |
+| `data/synthetic_10K/` | 10K | 215K | 8.3 s | – |
+| 100K kudos experiment | 100K | 1.9M | > 10 min (stopped) | 0.08 s |
+| 1M kudos experiment | 1M | 19M | not run | 0.93 s |
+
+`GeneralCreditTransfer` solves `(I - A^T) c = v` with SciPy's general sparse LU
+(`spsolve`), which accounts for almost all of its runtime and grows quickly with graph size.
+The kudos experiments in `analyses/` instead detect that every edge points to an earlier
+node and use `spsolve_triangular`, which is exact for acyclic graphs and scales to
+millions of nodes. See [Experiments and Analyses](#experiments-and-analyses).
 
 ## File Structure
 
 ```
-CreditTransferProject/
+credittransfer/
 ├── credit/
 │   ├── generalFormulation.py    # Core algorithm
 │   ├── authorMetrics.py          # H-index computation
@@ -406,7 +413,7 @@ The test suite runs in about 30 seconds. Install `pytest` first if your environm
 
 ## License
 
-[Specify your license]
+Licensed under the [Apache License 2.0](LICENSE).
 
 ## Citation
 
