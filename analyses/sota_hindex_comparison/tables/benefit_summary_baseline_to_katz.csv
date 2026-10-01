@@ -1,0 +1,11 @@
+Metric,Value
+Total authors,363591.0
+Authors with h-index gain,0.0
+Authors with h-index loss,363591.0
+Authors unchanged,0.0
+Mean delta-h,-29.58
+Median delta-h,-26.0
+Max gain,-3.0
+Max loss,-234.0
+Mean h_baseline of losers,36.3
+Mean pubs of losers,127.0

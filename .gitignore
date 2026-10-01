@@ -39,3 +39,6 @@ logs/
 temp/
 tmp/
 
+
+# Too large for GitHub (>100MB)
+data/mes_experiment_before_relation_fix/

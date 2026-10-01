@@ -1,0 +1,50 @@
+================================================================================
+PubMed Author H-Index Ranking Analysis - Summary Report
+Generated: 2026-03-13T12:23:42.533432
+================================================================================
+
+CONFIGURATION
+----------------------------------------
+  Baseline rate:  1.0
+  Variations:     ['1->0.75', '1->0.5', '1->0.25']
+  Cutoffs:        [10, 100, 1000, 10000]
+
+VARIATION r=1.0 → r=0.75
+----------------------------------------
+  Authors in common:          476,286
+  Authors gaining h-index:     52,683 (11.1%)
+  Authors losing h-index:     358,525 (75.3%)
+  Authors unchanged:           65,078 (13.7%)
+  Mean dh:  -1.463
+  Max gain: +29    Max loss: -14
+  Top-10      Spearman=0.7818  Kendall=0.6000
+  Top-100     Spearman=0.8893  Kendall=0.7194
+  Top-1,000   Spearman=0.9034  Kendall=0.7381
+  Top-10,000  Spearman=0.9380  Kendall=0.7921
+
+VARIATION r=1.0 → r=0.50
+----------------------------------------
+  Authors in common:          454,959
+  Authors gaining h-index:     47,899 (10.5%)
+  Authors losing h-index:     385,661 (84.8%)
+  Authors unchanged:           21,399 (4.7%)
+  Mean dh:  -3.663
+  Max gain: +62    Max loss: -30
+  Top-10      Spearman=0.1978  Kendall=0.1795
+  Top-100     Spearman=0.5964  Kendall=0.4118
+  Top-1,000   Spearman=0.6609  Kendall=0.4747
+  Top-10,000  Spearman=0.7618  Kendall=0.5728
+
+VARIATION r=1.0 → r=0.25
+----------------------------------------
+  Authors in common:          418,240
+  Authors gaining h-index:     29,827 (7.1%)
+  Authors losing h-index:     381,327 (91.2%)
+  Authors unchanged:            7,086 (1.7%)
+  Mean dh:  -8.339
+  Max gain: +96    Max loss: -65
+  Top-10      Spearman=-0.4097  Kendall=-0.2157
+  Top-100     Spearman=0.0933  Kendall=0.0506
+  Top-1,000   Spearman=0.2459  Kendall=0.1618
+  Top-10,000  Spearman=0.4503  Kendall=0.3105
+

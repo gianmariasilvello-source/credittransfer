@@ -1,0 +1,14 @@
+Benefit summary - baseline -> katz
+==================================
+
+                   Metric     Value
+            Total authors 363591.00
+Authors with h-index gain      0.00
+Authors with h-index loss 363591.00
+        Authors unchanged      0.00
+             Mean delta-h    -29.58
+           Median delta-h    -26.00
+                 Max gain     -3.00
+                 Max loss   -234.00
+Mean h_baseline of losers     36.30
+      Mean pubs of losers    127.00

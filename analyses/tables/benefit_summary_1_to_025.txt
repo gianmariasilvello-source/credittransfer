@@ -1,0 +1,16 @@
+Transitivity benefit summary - r=1.0 → r=0.25
+=============================================
+
+                    Metric      Value
+             Total authors 418240.000
+ Authors with h-index gain  29827.000
+ Authors with h-index loss 381327.000
+         Authors unchanged   7086.000
+              Mean delta-h     -8.339
+            Median delta-h     -8.000
+                  Max gain     96.000
+                  Max loss    -65.000
+Mean h_baseline of gainers     37.200
+      Mean pubs of gainers    132.400
+ Mean h_baseline of losers     35.100
+       Mean pubs of losers    127.000

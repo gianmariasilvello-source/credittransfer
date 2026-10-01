@@ -1,0 +1,4 @@
+experiment,config,n_nodes,n_edges,density,avg_in_degree,avg_out_degree,max_in_degree,max_out_degree,transitivity,n_types,n_authors,avg_authors_per_node,community_modularity_proxy,seed
+Small (100),config/synthetic_small.properties,100,643,0.06494949494949495,6.43,6.43,58,10,0.03265479219677693,2,50,1.91,5,123
+Medium (1K),config/synthetic_citation.properties,1000,14160,0.014174174174174175,14.16,14.16,565,50,0.01900509767696466,3,300,2.577,10,42
+Large (10K),config/synthetic_10K.properties,10000,214661,0.0021468246824682467,21.4661,21.4661,5930,50,0.015310760459687557,2,3000,3.0203,15,999

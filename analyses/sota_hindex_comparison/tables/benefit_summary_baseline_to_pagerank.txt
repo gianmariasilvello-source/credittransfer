@@ -1,0 +1,16 @@
+Benefit summary - baseline -> pagerank
+======================================
+
+                    Metric      Value
+             Total authors 354742.000
+ Authors with h-index gain  14847.000
+ Authors with h-index loss 337586.000
+         Authors unchanged   2309.000
+              Mean delta-h    -16.509
+            Median delta-h    -15.000
+                  Max gain    140.000
+                  Max loss   -147.000
+Mean h_baseline of gainers     33.600
+      Mean pubs of gainers    129.300
+ Mean h_baseline of losers     36.900
+       Mean pubs of losers    134.700

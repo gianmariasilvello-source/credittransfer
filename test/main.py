@@ -79,6 +79,125 @@ def run_mode(mode: str = "gui"):
         total_credit, kudos, diagnostics = ct.compute_credit_distribution(v, check_convergence=True,
         use_sparse_eigensolver=True)
         display_results(ct, total_credit, kudos, diagnostics)
+    elif mode == "novembertest":
+        # November 2025 test case: 6 nodes (A, B, C, D, E, F, G)
+        # Edges: B->A, C->A, D->A, A->F, G->B, E->G
+        # All nodes are papers with 0.5 retention rate
+
+        nodes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+        # Build adjacency matrix (row->col means edge from row to col)
+        # Order: A, B, C, D, E, F, G (indices 0-6)
+        matrix = [
+            [0, 0, 0, 0, 0, 1, 0],  # A -> F
+            [1, 0, 0, 0, 0, 0, 0],  # B -> A
+            [1, 0, 0, 0, 0, 0, 0],  # C -> A
+            [1, 0, 0, 0, 0, 0, 0],  # D -> A
+            [0, 0, 0, 0, 0, 0, 1],  # E -> G
+            [0, 0, 0, 0, 0, 0, 0],  # F (no outgoing edges)
+            [0, 1, 0, 0, 0, 0, 0],  # G -> B
+        ]
+
+        g = Graph.from_matrix(nodes, matrix, is_directed=True)
+
+        print(f"\nNovember Test Graph:")
+        print(f"  Nodes: {nodes}")
+        print(f"  Edges: {g.edges()}")
+        print(f"  Total: {len(g.nodes())} nodes, {len(g.edges())} edges")
+
+        # All nodes are papers (type 0) with 0.5 retention rate
+        node_types = np.array([0, 0, 0, 0, 0, 0, 0])  # All papers
+
+        gct = GeneralCreditTransfer(
+            graph=g,
+            node_types=node_types,
+            use_integer_indices=False  # Using string labels (A, B, C, etc.)
+        )
+
+        # Set retention rate: 0.5 for all papers (type 0)
+        type_retention_rates = np.array([0.5])
+        gct.set_retention_by_type(type_retention_rates)
+
+        print(f"\nRetention rate: 0.5 for all nodes (all are papers)")
+
+        # Compute credit distribution
+        total_credit, kudos, diagnostics = gct.compute_credit_distribution(
+            check_convergence=True,
+            use_sparse_eigensolver=True
+        )
+
+        print(f"\nResults:")
+        print(f"{'Node':<8} {'Total Credit':<15} {'Kudos':<15}")
+        print("-" * 40)
+        for node in sorted(nodes):
+            idx = gct.node_to_idx[node]
+            print(f"{node:<8} {total_credit[idx]:<15.6f} {kudos[idx]:<15.6f}")
+
+        print(f"\nDiagnostics:")
+        print(f"  Spectral radius: {diagnostics['spectral_radius']:.6f}")
+        print(f"  Converges: {diagnostics['converges']}")
+        print(f"  Total kudos: {diagnostics['total_kudos']:.6f}")
+        print(f"  Conservation error: {diagnostics['conservation_error']:.10e}")
+
+    elif mode == "matteoTest":
+        # matteoTest case: 6 nodes (A, B, C, D, E, F)
+        # Edges: A->B, A->C, B->D, C->D, C->F, D->E, D->F
+        # All nodes are papers with 0.3 retention rate
+
+        nodes = ['A', 'B', 'C', 'D', 'E', 'F']
+
+        # Build adjacency matrix (row->col means edge from row to col)
+        # Order: A, B, C, D, E, F (indices 0-5)
+        matrix = [
+            [0, 1, 1, 0, 0, 0],  # A -> B, C
+            [0, 0, 0, 1, 0, 0],  # B -> D
+            [0, 0, 0, 1, 0, 1],  # C -> D, F
+            [0, 0, 0, 0, 1, 1],  # D -> E, F
+            [0, 0, 0, 0, 0, 0],  # E (no outgoing edges)
+            [0, 0, 0, 0, 0, 0],  # F (no outgoing edges)
+        ]
+
+        g = Graph.from_matrix(nodes, matrix, is_directed=True)
+
+        print(f"\nMatteoTest Graph:")
+        print(f"  Nodes: {nodes}")
+        print(f"  Edges: {g.edges()}")
+        print(f"  Total: {len(g.nodes())} nodes, {len(g.edges())} edges")
+
+        # All nodes are papers (type 0) with 0.3 retention rate
+        node_types = np.array([0, 0, 0, 0, 0, 0])  # All papers
+
+        gct = GeneralCreditTransfer(
+            graph=g,
+            node_types=node_types,
+            use_integer_indices=False  # Using string labels (A, B, C, etc.)
+        )
+
+        # Set retention rate: 0.3 for all papers (type 0)
+        type_retention_rates = np.array([0.3])
+        gct.set_retention_by_type(type_retention_rates)
+
+        print(f"\nRetention rate: 0.3 for all nodes (all are papers)")
+
+        # Compute credit distribution
+        total_credit, kudos, diagnostics = gct.compute_credit_distribution(
+            check_convergence=True,
+            use_sparse_eigensolver=True
+        )
+
+        print(f"\nResults:")
+        print(f"{'Node':<8} {'Total Credit':<15} {'Kudos':<15}")
+        print("-" * 40)
+        for node in sorted(nodes):
+            idx = gct.node_to_idx[node]
+            print(f"{node:<8} {total_credit[idx]:<15.6f} {kudos[idx]:<15.6f}")
+
+        print(f"\nDiagnostics:")
+        print(f"  Spectral radius: {diagnostics['spectral_radius']:.6f}")
+        print(f"  Converges: {diagnostics['converges']}")
+        print(f"  Total kudos: {diagnostics['total_kudos']:.6f}")
+        print(f"  Conservation error: {diagnostics['conservation_error']:.10e}")
+
     elif mode == "optimized":
         node_labels = [0, 1, 2, 3, 4]
         adj_matrix =  [[0, 1, 1, 0, 1],
@@ -163,14 +282,16 @@ def run_mode(mode: str = "gui"):
         run_from_config(config_file)
     else:
         print(f"Unknown mode: {mode}. Available modes:")
-        print("  gui      - Interactive graph GUI")
-        print("  examples - Run example graphs")
-        print("  custom   - Run custom example with weights")
-        print("  matrix   - Run matrix-based example")
-        print("  optimized - Run optimized example with all features")
+        print("  gui          - Interactive graph GUI")
+        print("  examples     - Run example graphs")
+        print("  custom       - Run custom example with weights")
+        print("  matrix       - Run matrix-based example")
+        print("  novembertest - November 2025 test: 7 nodes, 0.5 retention")
+        print("  matteoTest - Matteo test: 6 nodes, 0.3 retention")
+        print("  optimized    - Run optimized example with all features")
         print("  file <config> - Run from configuration file")
 
 if __name__ == "__main__":
     import os
-    mode = sys.argv[1] if len(sys.argv) > 1 else "optimized"
+    mode = sys.argv[1] if len(sys.argv) > 1 else "matteoTest"
     run_mode(mode)

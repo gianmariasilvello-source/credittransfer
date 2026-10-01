@@ -24,12 +24,16 @@ class MESDataParser:
     TYPE_DATASET = 1
     TYPE_SOFTWARE = 2
 
+    # Relationship semantics are matched case-insensitively: the curated data uses
+    # DataCite capitalization ('Cites', 'IsPartOf'), older exports used lower camel case.
+
     # Relationship semantics that create edges FROM object TO subject
     OBJECT_TO_SUBJECT = {
-        'IsReferencedBy',  # paper A IsReferencedBy paper B -> B references A -> edge B->A
-        'IsSupplementedBy',  # dataset A IsSupplementedBy paper B -> B supplements A -> edge B->A
-        'isPartOf',  # dataset A isPartOf paper B -> A is part of B -> edge B->A
-        'isCitedBy'  # dataset A isCitedBy paper B -> B cites A -> edge B->A
+        'isreferencedby',  # paper A IsReferencedBy paper B -> B references A -> edge B->A
+        'issupplementedby',  # dataset A IsSupplementedBy paper B -> B supplements A -> edge B->A
+        'ispartof',  # dataset A IsPartOf paper B -> A is part of B -> edge B->A
+        'iscitedby',  # dataset A IsCitedBy paper B -> B cites A -> edge B->A
+        'isdocumentedby'  # dataset A IsDocumentedBy paper B -> B documents A -> edge B->A
     }
 
     # Relationship semantics that create edges FROM subject TO object
@@ -37,15 +41,22 @@ class MESDataParser:
         'references',  # paper A references paper B -> edge A->B
         'cites',  # paper A cites dataset B -> edge A->B
         'documents',  # paper A documents dataset B -> edge A->B
-        'IsSupplementTo'  # paper A IsSupplementTo dataset B -> edge A->B
+        'issupplementto',  # paper A IsSupplementTo dataset B -> edge A->B
+        'haspart'  # paper A HasPart dataset B -> inverse of IsPartOf -> edge A->B
     }
+
+    # Curation statuses whose relations are not turned into edges by default.
+    # 'Removed' marks links the curators rejected; in the curated MES data these are
+    # often a machine-extracted direction that was replaced by the inverse relation.
+    DEFAULT_EXCLUDED_STATUSES = frozenset({'Removed'})
 
     def __init__(self,
                  publications_file: str,
                  datasets_file: str,
                  software_file: Optional[str] = None,
                  authors_file: Optional[str] = None,
-                 relations_file: Optional[str] = None):
+                 relations_file: Optional[str] = None,
+                 excluded_statuses: Optional[Set[str]] = None):
         """
         Initialize parser with data file paths.
 
@@ -55,19 +66,28 @@ class MESDataParser:
             software_file: Optional JSON file with software nodes
             authors_file: Optional JSON file with author mappings
             relations_file: Optional JSON file with relationships
+            excluded_statuses: Relation 'status' values to skip when building edges
+                (default: DEFAULT_EXCLUDED_STATUSES). Pass an empty set to keep all.
         """
         self.publications_file = publications_file
         self.datasets_file = datasets_file
         self.software_file = software_file
         self.authors_file = authors_file
         self.relations_file = relations_file
+        self.excluded_statuses = (set(self.DEFAULT_EXCLUDED_STATUSES)
+                                  if excluded_statuses is None else set(excluded_statuses))
 
         # Parsed data
         self.nodes = {}  # node_id -> {type, pid, fullname, title, etc.}
         self.node_types = {}  # node_id -> type_code
         self.authors = defaultdict(list)  # node_id -> [author_ids]
         self.author_names = {}  # author_id -> name
+        self.author_pids = {}  # author_id -> [external pids]
         self.edges = set()  # (source, target) tuples
+
+        # Relation bookkeeping, so dropped relations are visible in the summary
+        self.relation_stats = defaultdict(int)  # outcome -> count
+        self.unknown_semantics = defaultdict(int)  # semantics -> count
 
         # ID mappings
         self.node_id_counter = 0
@@ -235,6 +255,10 @@ class MESDataParser:
                 continue
 
             # Handle citation/reference relations (build graph edges)
+            if rel.get('status') in self.excluded_statuses:
+                self.relation_stats['skipped_status'] += 1
+                continue
+
             # Extract IDs - support both old format (subject/object) and new format (source/target)
             if 'source' in rel and 'target' in rel:
                 # New format: direct string IDs
@@ -246,27 +270,31 @@ class MESDataParser:
                 object_id = rel.get('object', {}).get('pid') or rel.get('object', {}).get('id')
 
             if not subject_id or not object_id:
+                self.relation_stats['skipped_missing_id'] += 1
                 continue
 
             # Check if nodes exist
-            if subject_id not in self.external_to_internal_node:
-                continue
-            if object_id not in self.external_to_internal_node:
+            if (subject_id not in self.external_to_internal_node
+                    or object_id not in self.external_to_internal_node):
+                self.relation_stats['skipped_unknown_node'] += 1
                 continue
 
             subj_internal = self.external_to_internal_node[subject_id]
             obj_internal = self.external_to_internal_node[object_id]
 
             # Determine edge direction based on semantics
-            if semantic in self.OBJECT_TO_SUBJECT:
+            key = semantic.lower()
+            if key in self.OBJECT_TO_SUBJECT:
                 # Edge from object to subject
                 self.edges.add((obj_internal, subj_internal))
-            elif semantic in self.SUBJECT_TO_OBJECT:
+            elif key in self.SUBJECT_TO_OBJECT:
                 # Edge from subject to object
                 self.edges.add((subj_internal, obj_internal))
-            elif semantic == 'IsDocumentedBy':
-                # Special case: reverse direction
-                self.edges.add((obj_internal, subj_internal))
+            else:
+                self.unknown_semantics[semantic] += 1
+                self.relation_stats['skipped_unknown_semantics'] += 1
+                continue
+            self.relation_stats['used'] += 1
 
     def _process_hasauthor_relation(self, rel: Dict):
         """
@@ -346,11 +374,18 @@ class MESDataParser:
             # Create internal author ID and store mapping
             internal_author_id = self._get_or_create_author_id(author_id_str, fullname)
 
-            # Store external PIDs if available for potential future use
+            # Store external PIDs (ORCID, Microsoft Academic, ...) for author disambiguation
             # (though we primarily use the id field for mapping)
-            pids = entry.get('pid', [])
-            if pids and not isinstance(pids, list):
-                pids = [pids]
+            self.author_pids[internal_author_id] = self._parse_pid_list(entry.get('pid'))
+
+    @staticmethod
+    def _parse_pid_list(pids) -> List[str]:
+        """Parse a pid field: a list, or a string such as '[0000-0003-2153-1954,https://...]'."""
+        if not pids:
+            return []
+        if isinstance(pids, list):
+            return [str(p).strip() for p in pids if str(p).strip()]
+        return [p.strip() for p in str(pids).strip('[]').split(',') if p.strip()]
 
     def print_summary(self):
         """Print summary statistics of parsed data."""
@@ -368,6 +403,16 @@ class MESDataParser:
         print(f"Total edges: {len(self.edges)}")
         print(f"Total authors: {self.author_id_counter}")
         print(f"Nodes with authors: {len(self.authors)}")
+        if self.relation_stats:
+            print(f"Citation relations used: {self.relation_stats['used']}"
+                  f" (skipped: {self.relation_stats['skipped_status']} by status"
+                  f" {sorted(self.excluded_statuses)},"
+                  f" {self.relation_stats['skipped_unknown_node']} unknown node,"
+                  f" {self.relation_stats['skipped_missing_id']} missing id,"
+                  f" {self.relation_stats['skipped_unknown_semantics']} unknown semantics)")
+        if self.unknown_semantics:
+            print(f"WARNING: unrecognized relation semantics (no edges created): "
+                  f"{dict(self.unknown_semantics)}")
 
     def serialize_to_files(self, output_dir: str, prefix: str = 'mes') -> dict:
         """

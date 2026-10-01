@@ -1,0 +1,8 @@
+experiment,type,count,pct
+Small (100),paper,87,87.0
+Small (100),dataset,13,13.0
+Medium (1K),paper,712,71.2
+Medium (1K),dataset,242,24.2
+Medium (1K),software,46,4.6
+Large (10K),paper,7061,70.61
+Large (10K),dataset,2939,29.39

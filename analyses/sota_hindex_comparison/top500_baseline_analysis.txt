@@ -1,0 +1,29 @@
+Top-500 Baseline-Centric SOTA Comparison
+========================================
+
+Definition:
+- Baseline set: authors ranked <=500 in baseline (retention=1)
+- Overlap count: |Top500_baseline ∩ Top500_method|
+
+Method: katz
+  Overlap Top-500 count: 246 / 500 (49.20%)
+  Baseline Top-500 present in method file: 500
+  Mean delta_h (method - baseline): -127.012
+  Median delta_h: -123.000
+  delta_h range: [-234, -85]
+  Authors gained/lost/same h: 0/500/0
+  Mean delta_rank (positive means moved up): -795.656
+  Median delta_rank: -274.000
+  Authors moved up/down/same rank: 118/381/1
+
+Method: pagerank
+  Overlap Top-500 count: 158 / 500 (31.60%)
+  Baseline Top-500 present in method file: 500
+  Mean delta_h (method - baseline): -64.306
+  Median delta_h: -70.000
+  delta_h range: [-147, 77]
+  Authors gained/lost/same h: 18/481/1
+  Mean delta_rank (positive means moved up): -1613.334
+  Median delta_rank: -965.000
+  Authors moved up/down/same rank: 65/435/0
+

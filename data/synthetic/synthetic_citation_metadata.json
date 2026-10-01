@@ -1,0 +1,32 @@
+{
+  "n_nodes": 1000,
+  "n_edges": 14160,
+  "avg_in_degree": 14.16,
+  "avg_out_degree": 14.16,
+  "max_in_degree": 565,
+  "max_out_degree": 50,
+  "transitivity": 0.01900509767696466,
+  "type_distribution": {
+    "paper": 712,
+    "dataset": 242,
+    "software": 46
+  },
+  "edges_by_mechanism": {
+    "preferential": 4273,
+    "community": 3521,
+    "transitive": 2824,
+    "type_preference": 2156,
+    "hierarchical": 1386
+  },
+  "config": {
+    "n_communities": 10,
+    "powerlaw_exponent": 2.5,
+    "transitivity_prob": 0.3,
+    "within_community_prob": 0.6
+  },
+  "n_authors": 300,
+  "nodes_with_authors": 1000,
+  "avg_authors_per_node": 2.577,
+  "max_papers_per_author": 13,
+  "avg_papers_per_author": 8.59
+}

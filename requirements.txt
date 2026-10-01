@@ -13,4 +13,4 @@ tables>=3.7.0           # HDF5 support (optional, for very large datasets)
 
 # System monitoring (optional, for memory usage tracking)
 psutil>=5.8.0
-
+typesafe-sdk>=0.7.2

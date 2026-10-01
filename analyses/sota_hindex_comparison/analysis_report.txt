@@ -1,0 +1,37 @@
+================================================================================
+SOTA (Katz/PageRank) vs Baseline H-Index - Summary Report
+Generated: 2026-06-24T09:44:34.829985
+================================================================================
+
+CONFIGURATION
+----------------------------------------
+  Baseline file: pkg24s4_1_author_hindices.txt
+  Methods:       ['katz', 'pagerank']
+  Cutoffs:       [10, 100, 1000, 10000]
+
+METHOD baseline -> katz
+----------------------------------------
+  Authors in common:          363,591
+  Authors gaining h-index:          0 (0.0%)
+  Authors losing h-index:     363,591 (100.0%)
+  Authors unchanged:                0 (0.0%)
+  Mean dh:  -29.580
+  Max gain: -3    Max loss: -234
+  Top-10      Spearman=-0.0647  Kendall=-0.0500
+  Top-100     Spearman=-0.1052  Kendall=-0.0661
+  Top-1,000   Spearman=0.0884  Kendall=0.0570
+  Top-10,000  Spearman=0.2342  Kendall=0.1570
+
+METHOD baseline -> pagerank
+----------------------------------------
+  Authors in common:          354,742
+  Authors gaining h-index:     14,847 (4.2%)
+  Authors losing h-index:     337,586 (95.2%)
+  Authors unchanged:            2,309 (0.7%)
+  Mean dh:  -16.509
+  Max gain: +140    Max loss: -147
+  Top-10      Spearman=-0.6120  Kendall=-0.3263
+  Top-100     Spearman=-0.3830  Kendall=-0.2495
+  Top-1,000   Spearman=-0.2496  Kendall=-0.1554
+  Top-10,000  Spearman=-0.0282  Kendall=-0.0138
+

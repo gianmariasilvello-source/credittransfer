@@ -1,0 +1,4 @@
+target_rate,baseline_top500_count,baseline_top500_present_in_target,target_top500_count,overlap_top500_count,overlap_pct_of_baseline_top500,mean_delta_h_baseline_top500,median_delta_h_baseline_top500,min_delta_h_baseline_top500,max_delta_h_baseline_top500,mean_delta_rank_baseline_top500,median_delta_rank_baseline_top500,authors_moved_up_rank,authors_moved_down_rank,authors_same_rank,authors_gained_h,authors_lost_h,authors_same_h
+0.75,500,500,500,450,90.0,2.27,1.0,-14,29,-15.378,-8.5,198,291,11,276,193,31
+0.5,500,500,500,383,76.6,0.278,-2.0,-30,62,-80.45,-46.0,163,334,3,203,280,17
+0.25,500,500,500,294,58.8,-15.79,-20.0,-65,87,-317.44,-163.5,121,376,3,111,385,4

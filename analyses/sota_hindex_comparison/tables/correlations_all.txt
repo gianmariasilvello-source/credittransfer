@@ -1,0 +1,12 @@
+Rank correlations - all methods
+===============================
+
+           Variation     Cutoff     N  Spearman   Kendall  W-Kendall
+    baseline -> katz     Top-10    16 -0.064706 -0.050000  -0.085225
+    baseline -> katz    Top-100   161 -0.105245 -0.066149  -0.141133
+    baseline -> katz  Top-1,000  1512  0.088440  0.056965  -0.056802
+    baseline -> katz Top-10,000 14024  0.234165  0.157021   0.134844
+baseline -> pagerank     Top-10    20 -0.612030 -0.326316  -0.309939
+baseline -> pagerank    Top-100   178 -0.383015 -0.249540  -0.263306
+baseline -> pagerank  Top-1,000  1677 -0.249633 -0.155449  -0.161960
+baseline -> pagerank Top-10,000 15239 -0.028242 -0.013840  -0.046473

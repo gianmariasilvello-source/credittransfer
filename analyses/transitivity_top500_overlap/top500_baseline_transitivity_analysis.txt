@@ -1,0 +1,40 @@
+Top-500 Baseline-Centric Transitivity Comparison
+===============================================
+
+Definition:
+- Baseline set: authors ranked <=500 at retention=1.00
+- Overlap count: |Top500_r1.00 ∩ Top500_rX|
+
+Target rate: r=0.75
+  Overlap Top-500 count: 450 / 500 (90.00%)
+  Baseline Top-500 present in target file: 500
+  Mean delta_h (target - baseline): 2.270
+  Median delta_h: 1.000
+  delta_h range: [-14, 29]
+  Authors gained/lost/same h: 276/193/31
+  Mean delta_rank (positive means moved up): -15.378
+  Median delta_rank: -8.500
+  Authors moved up/down/same rank: 198/291/11
+
+Target rate: r=0.50
+  Overlap Top-500 count: 383 / 500 (76.60%)
+  Baseline Top-500 present in target file: 500
+  Mean delta_h (target - baseline): 0.278
+  Median delta_h: -2.000
+  delta_h range: [-30, 62]
+  Authors gained/lost/same h: 203/280/17
+  Mean delta_rank (positive means moved up): -80.450
+  Median delta_rank: -46.000
+  Authors moved up/down/same rank: 163/334/3
+
+Target rate: r=0.25
+  Overlap Top-500 count: 294 / 500 (58.80%)
+  Baseline Top-500 present in target file: 500
+  Mean delta_h (target - baseline): -15.790
+  Median delta_h: -20.000
+  delta_h range: [-65, 87]
+  Authors gained/lost/same h: 111/385/4
+  Mean delta_rank (positive means moved up): -317.440
+  Median delta_rank: -163.500
+  Authors moved up/down/same rank: 121/376/3
+

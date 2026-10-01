@@ -1,0 +1,5 @@
+scenario,n_nodes,n_edges,self_loops,reciprocal_pairs,temporal_violations,spectral_radius,converges_rho_lt_1
+baseline,10000,214661,0,0,0,0.0,True
+add_self_loops_1pct_nodes,10000,214761,100,0,100,1.000000000000001,False
+add_back_edges_1pct_edges,10000,216807,0,2146,2146,0.9940197868943846,True
+add_back_edges_5pct_edges,10000,225394,0,10733,10733,0.9982326229561257,True

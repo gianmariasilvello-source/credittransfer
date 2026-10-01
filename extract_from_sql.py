@@ -10,6 +10,8 @@ from typing import Dict, List, Tuple
 import os
 from collections import defaultdict
 
+from dataprocessing.MESProcessor import MESDataParser
+
 
 class SQLDataExtractor:
     """
@@ -176,6 +178,7 @@ class SQLDataExtractor:
 
         edge_count = 0
         skipped = 0
+        unknown_relationships = defaultdict(int)
 
         while True:
             rows = self.cursor.fetchmany(batch_size)
@@ -194,19 +197,22 @@ class SQLDataExtractor:
                 idx_source = self.external_to_index[key_source]
                 idx_target = self.external_to_index[key_target]
 
-                # Handle different relationship semantics
-                # 'cites', 'references' -> source to target
-                # 'isCitedBy', 'isReferencedBy' -> target to source
-                if relationship in ['cites', 'references', 'documents']:
+                # Handle different relationship semantics (case-insensitive, same table as MES)
+                # 'cites', 'references', ... -> source to target
+                # 'isCitedBy', 'isReferencedBy', ... -> target to source
+                # A row without a relationship is a plain citation: source to target.
+                key = (relationship or 'cites').lower()
+                if key in MESDataParser.SUBJECT_TO_OBJECT:
                     self.edge_sources.append(idx_source)
                     self.edge_targets.append(idx_target)
-                elif relationship in ['isCitedBy', 'isReferencedBy']:
+                elif key in MESDataParser.OBJECT_TO_SUBJECT:
                     self.edge_sources.append(idx_target)
                     self.edge_targets.append(idx_source)
                 else:
-                    # Default: source to target
-                    self.edge_sources.append(idx_source)
-                    self.edge_targets.append(idx_target)
+                    # Unknown semantics: guessing a direction could reverse credit flow
+                    unknown_relationships[relationship] += 1
+                    skipped += 1
+                    continue
 
                 edge_count += 1
 
@@ -214,7 +220,10 @@ class SQLDataExtractor:
 
         print(f"\n✓ Total edges: {edge_count:,}")
         if skipped > 0:
-            print(f"  (Skipped {skipped:,} edges with missing nodes)")
+            print(f"  (Skipped {skipped:,} edges with missing nodes or unknown relationships)")
+        if unknown_relationships:
+            print(f"  WARNING: unrecognized relationships (no edges created): "
+                  f"{dict(unknown_relationships)}")
 
     def extract_authors(self, batch_size: int = 100000):
         """
